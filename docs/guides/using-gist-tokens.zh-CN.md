@@ -13,13 +13,13 @@ summary: 准备兼容的 Gist 文件，按 ID 插入向量，并核查 Full 与 
 
 训练得到的张量是 `gist.safetensors` 中的 `gist`：float32，形状为 **16 × 2048**，即 32,768 个学习得到的标量值。只训练这些 gist 向量，基座模型权重不动。
 
-**Gist 权重即将发布到 Hugging Face。** 本指南不提供可下载的 Gist 文件。运行 Gist 需要自行准备兼容的已训练 gist 向量和 manifest。
+[Gist 权重及 manifest](https://huggingface.co/ImPanda/how-shopify-gisting-works) 已发布到 Hugging Face。
 
 ## 前置条件
 
 使用 Python 3.11 和 uv。基础检查需要默认依赖；模型运行和训练还需要 `model` 扩展依赖（torch、transformers、safetensors）。参见[依赖声明](../../pyproject.toml)。
 
-从仓库根目录运行命令。下面的设置命令由你按需执行，会下载基座权重；gist 权重需要另行准备。下载脚本还需要 `huggingface_hub`（版本 0.34 或更新）提供的 `hf` CLI、Bash 及其校验和工具。
+从仓库根目录运行命令。下面的设置命令由你按需执行，会下载基座权重。下载脚本还需要 `huggingface_hub`（版本 0.34 或更新）提供的 `hf` CLI、Bash 及其校验和工具。
 
 ```sh
 uv sync --extra model
@@ -32,9 +32,21 @@ export GISTING_MODEL_DIR=./models/hf/qwen3-1.7b
 
 Gist 文件必须匹配运行时的 backend ID，包括 dtype。更改设备／backend 后，现有文件可能无法使用，需要准备新匹配的文件，并保留 manifest 检查。
 
+## 下载已发布的 Gist 文件
+
+本次发布来自 run `k16-v8-seed20261002`，`backend_id` 为 `transformers-mps-bfloat16`。下载权重和 manifest：
+
+```sh
+hf download ImPanda/how-shopify-gisting-works --local-dir ./artifacts/gist/k16-v8
+(cd ./artifacts/gist/k16-v8 && shasum -a 256 -c SHA256SUMS)
+export GISTING_GIST_DIR=./artifacts/gist/k16-v8
+```
+
+本地校验和验证不能代替运行时的 manifest 验证。文件必须通过下文列出的全部现有精确 manifest 检查。CPU 及其他 backend 不会自动兼容；应使用匹配运行时的文件，不绕过或改写 manifest。
+
 ## 按 ID 把 gist token 插进 prompt
 
-[`gist_rules()`](../../src/gisting/prompt/assemble.py) 将**同一个**占位 ID 重复 16 次。该 ID 比 tokenizer 的最大词表 ID 大一，但仍须位于模型的 embedding 表范围内。这会留出 16 个位置，不会添加 16 个新的可见词表字符串。
+[`gist_rules()`](../../src/gisting/prompt/assemble.py) 将**同一个**占位 ID 重复 16 次；本次发布的 ID 为 `151669`。该 ID 比 tokenizer 的最大词表 ID 大一，但仍须位于模型的 embedding 表范围内。这会留出 16 个位置，不会添加 16 个新的可见词表字符串。
 
 在输入 embedding 阶段，[`embed_with_gist()`](../../src/gisting/model_server/gist.py) 按顺序在这些位置替换为 16 行学习得到的向量。它不会改变基座 embedding 权重。在聊天中输入所谓的 gist token，不会激活这条路径。
 
@@ -73,10 +85,10 @@ printf '%s\n' '{"session_id":"local-full","messages":[{"role":"user","content":"
   uv run python -m gisting.agent run --mode full --transport local --env-file artifacts/local-runtime.env
 ```
 
-运行 Gist 时，将下方路径替换为你的兼容 Gist 文件目录，其中须包含 `manifest.json` 和 `gist.safetensors`：
+运行 Gist 时，使用下方已发布文件的目录。若自备兼容文件，可选择其路径；目录须包含 `manifest.json` 和 `gist.safetensors`：
 
 ```sh
-export GISTING_GIST_DIR=./artifacts/gist/example-run
+export GISTING_GIST_DIR=./artifacts/gist/k16-v8
 printf '%s\n' '{"session_id":"local-gist","messages":[{"role":"user","content":"Where is my order?"}]}' |
   uv run python -m gisting.agent run --mode gist --transport local --env-file artifacts/local-runtime.env
 ```

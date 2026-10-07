@@ -36,7 +36,9 @@ Evidence: [Full report](eval/reports/ee6c5c626278120523b9af02255958c0c9f5048c/fu
 [Gist report](eval/reports/ee6c5c626278120523b9af02255958c0c9f5048c/gist/report.json), and
 [composition derivation](src/gisting/eval/web_benchmarks.py).
 Only the 16 gist vectors are trained; the Qwen3-1.7B model weights remain unchanged.
-**Gist weights: coming on Hugging Face.** They are not currently downloadable here.
+[Gist weights and manifest](https://huggingface.co/ImPanda/how-shopify-gisting-works)
+are available on Hugging Face. See the [usage guide](docs/guides/using-gist-tokens.md)
+for download commands and exact compatibility requirements.
 
 ## Guides
 

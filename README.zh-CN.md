@@ -26,7 +26,7 @@ OpenGisting 用 **16 个训练后的 gist 向量**替换客服 agent 的固定�
 
 证据：[Full 报告](eval/reports/ee6c5c626278120523b9af02255958c0c9f5048c/full/report.json)、[Gist 报告](eval/reports/ee6c5c626278120523b9af02255958c0c9f5048c/gist/report.json)、[构成计算代码](src/gisting/eval/web_benchmarks.py)。仅训练 16 个 gist 向量，Qwen3-1.7B 权重保持不变。
 
-**Gist 权重即将发布到 Hugging Face。** 当前仓库不提供下载。
+[Gist 权重及 manifest](https://huggingface.co/ImPanda/how-shopify-gisting-works) 已发布到 Hugging Face。下载命令及精确兼容性要求见[使用指南](docs/guides/using-gist-tokens.zh-CN.md)。
 
 ## 阅读指南
 

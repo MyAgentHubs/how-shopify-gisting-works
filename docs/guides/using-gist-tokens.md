@@ -14,8 +14,8 @@ The configuration of record is **Qwen3-1.7B**, revision
 See [model candidates](../../models/candidates.json).
 The trained tensor is `gist` in `gist.safetensors`: float32, **16 × 2048**,
 or 32,768 learned scalar values. The base model weights are unchanged.
-**Gist weights: coming on Hugging Face.** No downloadable gist artifact is
-provided by this guide. You need your own compatible trained artifact to run Gist.
+[Gist weights and manifest](https://huggingface.co/ImPanda/how-shopify-gisting-works)
+are available on Hugging Face.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ Use Python 3.11 and uv. Basic checks need the default dependencies; model runtim
 and training additionally need the `model` extra (torch, transformers,
 safetensors). See [dependency declarations](../../pyproject.toml).
 Run commands from the repository root. These opt-in setup commands download
-base weights, not gist weights; the download script also needs the `hf` CLI
+base weights; the download script also needs the `hf` CLI
 from `huggingface_hub` (version 0.34 or newer), Bash, and its checksum utilities.
 
 ```sh
@@ -40,11 +40,27 @@ default. An artifact must match the runtime's backend ID, including dtype;
 changing the device/backend may therefore invalidate an existing artifact.
 Use a newly matched artifact rather than bypassing its manifest.
 
+## Download the released gist artifact
+
+The release is run `k16-v8-seed20261002`, with
+`backend_id` `transformers-mps-bfloat16`. Download its weights and manifest:
+
+```sh
+hf download ImPanda/how-shopify-gisting-works --local-dir ./artifacts/gist/k16-v8
+(cd ./artifacts/gist/k16-v8 && shasum -a 256 -c SHA256SUMS)
+export GISTING_GIST_DIR=./artifacts/gist/k16-v8
+```
+
+Local checksum verification does not replace runtime manifest validation.
+The artifact must pass all existing exact manifest checks listed below.
+CPU and other backends are not automatically compatible; use an artifact
+matched to the runtime rather than bypassing or rewriting the manifest.
+
 ## Insertion is by ID, not visible text
 
 [`gist_rules()`](../../src/gisting/prompt/assemble.py) repeats **the same**
-placeholder ID 16 times. The ID is one beyond the tokenizer's maximum vocabulary
-ID; it must still fit the model's embedding table. These are 16 positions,
+placeholder ID `151669` 16 times for this release. The ID is one beyond the
+tokenizer's maximum vocabulary ID; it must still fit the model's embedding table. These are 16 positions,
 not 16 new visible vocabulary strings. During input embedding,
 [`embed_with_gist()`](../../src/gisting/model_server/gist.py) substitutes the
 16 learned rows at those positions in order. It does not alter the base embedding
@@ -101,11 +117,12 @@ printf '%s\n' '{"session_id":"local-full","messages":[{"role":"user","content":"
   uv run python -m gisting.agent run --mode full --transport local --env-file artifacts/local-runtime.env
 ```
 
-For Gist, replace the path below with your compatible artifact directory,
-containing `manifest.json` and `gist.safetensors`:
+For Gist, use the released artifact directory below. If you bring your own
+compatible artifact, choose its path instead; the directory must contain
+`manifest.json` and `gist.safetensors`:
 
 ```sh
-export GISTING_GIST_DIR=./artifacts/gist/example-run
+export GISTING_GIST_DIR=./artifacts/gist/k16-v8
 printf '%s\n' '{"session_id":"local-gist","messages":[{"role":"user","content":"Where is my order?"}]}' |
   uv run python -m gisting.agent run --mode gist --transport local --env-file artifacts/local-runtime.env
 ```
