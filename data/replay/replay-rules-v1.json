@@ -1,0 +1,18 @@
+{
+  "canary_prefix": "GLR-",
+  "secret_patterns": {
+    "shopify_token": "\\bshp[a-z]{2}_",
+    "hugging_face_token": "\\bhf_",
+    "api_key_sk": "\\bsk-",
+    "github_token": "\\b(?:ghp|gho|ghu|ghs|ghr)_|\\bgithub_pat_",
+    "aws_access_key": "\\bAKIA[0-9A-Z]{16}\\b",
+    "slack_token": "\\bxox[abprs]-",
+    "private_key": "-----BEGIN [A-Z ]*PRIVATE KEY-----",
+    "bearer_credential": "\\b[Bb]earer\\s+[A-Za-z0-9._~+/-]{16,}"
+  },
+  "email_candidate": "[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+",
+  "email_allowed": "[a-z2-7]{10}@orders\\.example\\.com",
+  "order_number": "#(\\d+)",
+  "order_min": 1001,
+  "order_max": 1101
+}

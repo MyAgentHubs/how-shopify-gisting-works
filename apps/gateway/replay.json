@@ -1,0 +1,45 @@
+{
+  "status": "approved",
+  "turns": [
+    {
+      "role": "user",
+      "content": "Hi, where is my parcel?"
+    },
+    {
+      "role": "assistant",
+      "content": "Could you send me your order number and the email address you used for the order?"
+    },
+    {
+      "role": "user",
+      "content": "#1006, qdgxwwrmrp@orders.example.com"
+    },
+    {
+      "role": "assistant",
+      "content": "Your order is on its way. It is with Test Parcel, tracking number TP-6268497020."
+    },
+    {
+      "role": "user",
+      "content": "Great, thanks!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! If you need anything else, feel free to ask. Have a great day! 😊"
+    },
+    {
+      "role": "user",
+      "content": "Can you check my order #1022? adlmbuiyxt@orders.example.com"
+    },
+    {
+      "role": "assistant",
+      "content": "Your order has not shipped yet, so I do not have a delivery date."
+    },
+    {
+      "role": "user",
+      "content": "Can you recommend a good pasta recipe?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sorry, I can only help with order and delivery questions at Gisting Lab Store."
+    }
+  ]
+}

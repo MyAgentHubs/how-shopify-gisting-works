@@ -1,0 +1,11 @@
+{
+  "maxMessages": 10,
+  "maxCompares": 3,
+  "maxMessageChars": 300,
+  "humanCheckWaitMs": 20000,
+  "humanCheckInteractiveMs": 120000,
+  "chatRequestMs": 30000,
+  "ticketMarginMs": 60000,
+  "exampleFlashMs": 800,
+  "busyAnimationMs": 1200
+}

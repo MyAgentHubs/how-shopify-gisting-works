@@ -1,0 +1,14 @@
+{
+  "name": "gisting",
+  "pages_build_output_dir": "../../dist/web",
+  "compatibility_date": "2026-09-01",
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "GISTING_COUNTER",
+        "class_name": "CounterObject",
+        "script_name": "gisting-counter"
+      }
+    ]
+  }
+}

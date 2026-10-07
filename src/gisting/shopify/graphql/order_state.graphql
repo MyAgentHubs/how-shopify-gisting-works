@@ -1,0 +1,58 @@
+query OrderState($query: String!) {
+  shop {
+    myshopifyDomain
+    plan {
+      partnerDevelopment
+    }
+  }
+  orders(first: 5, query: $query) {
+    nodes {
+      id
+      name
+      test
+      tags
+      note
+      email
+      displayFulfillmentStatus
+      lineItems(first: 5) {
+        nodes {
+          id
+          quantity
+        }
+      }
+      fulfillments(first: 10) {
+        id
+        status
+        displayStatus
+        estimatedDeliveryAt
+        deliveredAt
+        totalQuantity
+        trackingInfo {
+          company
+          number
+          url
+        }
+        events(first: 20) {
+          nodes {
+            id
+            status
+            happenedAt
+          }
+        }
+      }
+      fulfillmentOrders(first: 10) {
+        nodes {
+          id
+          status
+          lineItems(first: 5) {
+            nodes {
+              id
+              totalQuantity
+              remainingQuantity
+            }
+          }
+        }
+      }
+    }
+  }
+}

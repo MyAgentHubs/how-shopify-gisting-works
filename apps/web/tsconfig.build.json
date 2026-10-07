@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "rewriteRelativeImportExtensions": true,
+    "rootDir": "../..",
+    "outDir": "../../dist/web/opengisting/js",
+    "sourceMap": false
+  },
+  "include": ["src/**/*.ts", "preview/**/*.ts", "fakes/**/*.ts"]
+}

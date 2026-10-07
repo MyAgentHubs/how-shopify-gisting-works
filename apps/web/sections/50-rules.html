@@ -1,0 +1,27 @@
+{{include:panda-divider}}
+<section class="og-sec og-wrap" id="rules" aria-labelledby="og-t-rules">
+  <p class="og-kicker">5 · {{copy:rules.eyebrow}}</p>
+  <div class="og-hrow">
+    <h2 id="og-t-rules">{{copy:rules.heading}}</h2>
+    <p class="og-nbadge"><span class="og-vh">{{copy:rules.badge}}</span><span aria-hidden="true"><b>{{text:rules.badge.from}}</b><i>→</i><b class="og-to">{{text:rules.badge.to}}</b></span></p>
+  </div>
+  <p class="og-sintro">{{copy:rules.intro}}</p>
+  <div class="og-a3">
+    <div class="og-a3l">
+      <details class="og-dtl og-acard">
+        <summary><span class="og-ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M9.5 14l2 2 3.5-4"/></svg></span><span class="og-st">{{copy:rules.open}}<small>{{copy:rules.badge}}</small></span><span class="og-car" aria-hidden="true"></span></summary>
+        <div class="og-in"><pre class="og-code">{{text:rules.text}}</pre></div>
+      </details>
+      <details class="og-dtl og-acard">
+        <summary><span class="og-ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 6.5a4 4 0 0 0-5 5L3 18l3 3 6.5-6.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></span><span class="og-st">{{copy:tools.title}}<small>{{text:rules.tools.length}}</small></span><span class="og-car" aria-hidden="true"></span></summary>
+        <div class="og-in">
+          <p>{{copy:tools.intro}}</p>
+          <ul class="og-tl">
+{{each:rules.tools|rule-tool}}
+          </ul>
+        </div>
+      </details>
+    </div>
+{{include:training-card}}
+  </div>
+</section>

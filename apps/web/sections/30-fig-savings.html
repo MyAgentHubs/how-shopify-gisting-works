@@ -1,0 +1,56 @@
+{{include:panda-divider}}
+<section class="og-sec og-wrap" id="savings" aria-labelledby="og-t-savings">
+  <p class="og-kicker">3</p>
+  <h2 id="og-t-savings">{{copy:savings.title}}</h2>
+  <div class="og-recipe" role="group" aria-labelledby="og-t-savings">
+    <div class="og-rc"><b>{{data:numbers.savedPerCall|int}}</b><span>{{copy:savings.per_call}}</span><em>{{data:numbers.rulesFull|int}} − {{data:numbers.rulesGist|int}}</em></div>
+    <span class="og-op" aria-hidden="true">×</span>
+    <div class="og-rc"><b>{{data:numbers.callsPerCase|decimal}}</b><span>{{copy:savings.calls_per_turn}}</span><em>{{copy:savings.calls_sub}}</em></div>
+    <span class="og-op" aria-hidden="true">=</span>
+    <div class="og-rc og-sum"><b>≈ {{data:numbers.savedPerTurn|int}}</b><span>{{copy:savings.per_turn}}</span></div>
+  </div>
+  <div class="og-card" data-calculator>
+    <div class="og-calc">
+      <div>
+        <h3>{{copy:calc.title}} <span class="og-tag og-whatif">{{copy:calc.tag}}</span></h3>
+        <p class="og-nojs" data-role="nojs-note">{{copy:calc.noscript|turns=savings.turns|perDay=savings.perDay|model=savings.modelName}}</p>
+        <div class="og-controls" data-role="controls" hidden>
+          <div class="og-ctl"><label for="og-s-day"><span>{{copy:calc.per_day}}</span><output id="og-o-day" for="og-s-day">{{data:savings.perDay|int}}</output></label>
+            <input id="og-s-day" type="range" min="0" max="{{data:savings.stopMax|plain}}" step="1" value="{{data:savings.stopIndex|plain}}" aria-valuetext="{{data:savings.perDay|int}}"></div>
+          <div class="og-ctl"><label for="og-s-turns"><span>{{copy:calc.turns}}</span><output id="og-o-turns" for="og-s-turns">{{data:savings.turns|int}}</output></label>
+            <input id="og-s-turns" type="range" min="1" max="{{data:savings.turnsMax|plain}}" step="1" value="{{data:savings.turns|plain}}"></div>
+          <fieldset class="og-ctl"><legend class="og-lbl">{{copy:calc.model}}</legend><div class="og-seg">{{each:savings.models|model-radio}}</div></fieldset>
+        </div>
+      </div>
+      <div class="og-saved" aria-live="polite">
+        <p class="og-lbl2">{{copy:calc.tokens_saved}} · {{copy:calc.per_month|days=savings.daysPerMonth}}</p>
+        <p class="og-tok"><span data-out="tokens">{{data:savings.tokens|tokens}}</span><small>{{copy:meter.unit}}</small></p>
+        <div class="og-tiles">
+          <div class="og-tile"><p class="og-tn"><i class="og-sw og-l" aria-hidden="true"></i>{{copy:calc.list_price}}</p><p class="og-usd" data-out="usd-list">{{data:savings.listUsd|usd}}</p><p class="og-tp"><span data-out="p-list">{{data:savings.listPrice|usd}}</span> {{copy:calc.unit_input}}</p></div>
+          <div class="og-tile"><p class="og-tn"><i class="og-sw og-c" aria-hidden="true"></i>{{copy:calc.cached}}</p><p class="og-usd" data-out="usd-cache">{{data:savings.cachedUsd|usd}}</p><p class="og-tp"><span data-out="p-cache">{{data:savings.cachedPrice|usd}}</span> {{copy:calc.unit_cache}}</p><p class="og-tp og-same" data-out="same-price" {{flag:savings.cacheHelps|hidden}}>{{copy:calc.haiku_note|model=savings.uncacheable.short}}</p></div>
+        </div>
+        <p class="og-cachenote">{{copy:calc.caching_note}}</p>
+      </div>
+    </div>
+    <div class="og-stair" role="group" aria-labelledby="og-t-stair">
+      <h4 id="og-t-stair">{{copy:calc.chart_title}}</h4>
+      <div class="og-srow og-you" data-role="you" hidden><span class="og-sl">{{copy:calc.scenario}}</span>{{with:savings.you|stair-bars}}</div>
+      {{each:savings.rows|stair-row}}
+    </div>
+  </div>
+  <details class="og-dtl">
+    <summary>{{copy:method.title}}<span class="og-car" aria-hidden="true"></span></summary>
+    <div class="og-in">
+      <h3 class="og-fineh">{{copy:prices.title}}</h3>
+      <p class="og-figcap">{{copy:prices.source}}</p>
+      <table class="og-prices"><thead><tr><th scope="col">{{copy:prices.model}}</th><th scope="col" class="og-n">{{copy:prices.input}}</th><th scope="col" class="og-n">{{copy:prices.cache}}</th></tr></thead><tbody>{{each:savings.models|price-row}}</tbody></table>
+      <ol class="og-fine">
+        <li><span>{{copy:fine.what_if}}</span></li>
+        <li><span>{{copy:fine.caching}}</span></li>
+        <li><span>{{copy:fine.haiku|model=savings.uncacheable.short|min=savings.uncacheable.minCacheable}}</span></li>
+        <li><span>{{copy:fine.input_only}}</span></li>
+        <li><span>{{copy:fine.no_speed_claim}}</span></li>
+      </ol>
+    </div>
+  </details>
+</section>

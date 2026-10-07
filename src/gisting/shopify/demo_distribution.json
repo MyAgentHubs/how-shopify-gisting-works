@@ -1,0 +1,51 @@
+{
+  "version": "shipment-plan-v1",
+  "seed": 20260930,
+  "plan_tag": "shipment-plan-v1",
+  "carrier": "Test Parcel",
+  "tracking_prefix": "TP-",
+  "tracking_url_base": "https://tracking.example.com/",
+  "canary_prefix": "GLR-",
+  "note_template": "Test order for Gisting Lab experiments in a Shopify development store. Reference {canary}",
+  "scenarios": [
+    {"name": "UNFULFILLED", "count": 25, "fulfill": "none", "tracking": false, "event": null},
+    {
+      "name": "PARTIALLY_FULFILLED", "count": 12, "fulfill": "all_but_one", "min_quantity": 2,
+      "tracking": true, "event": "IN_TRANSIT", "happened_hours": [-60, -12],
+      "eta_hours": [[24, 96]]
+    },
+    {
+      "name": "IN_TRANSIT", "count": 25, "fulfill": "all", "tracking": true,
+      "event": "IN_TRANSIT", "happened_hours": [-60, -12], "eta_hours": [[24, 96]]
+    },
+    {
+      "name": "OUT_FOR_DELIVERY", "count": 10, "fulfill": "all", "tracking": true,
+      "event": "OUT_FOR_DELIVERY", "happened_hours": [-4, -1], "eta_hours": [[1, 4]],
+      "eta_same_day": true
+    },
+    {
+      "name": "DELIVERED", "count": 15, "fulfill": "all", "tracking": true,
+      "event": "DELIVERED", "happened_hours": [-240, -24], "eta_hours": []
+    },
+    {
+      "name": "ATTEMPTED_DELIVERY", "count": 3, "fulfill": "all", "tracking": true,
+      "event": "ATTEMPTED_DELIVERY", "happened_hours": [-20, -2], "eta_hours": [[12, 48]]
+    },
+    {
+      "name": "DELAYED", "count": 3, "fulfill": "all", "tracking": true,
+      "event": "DELAYED", "happened_hours": [-72, -24], "eta_hours": [[-72, -24], [96, 168]]
+    },
+    {"name": "FULFILLED_NO_TRACKING", "count": 7, "fulfill": "all", "tracking": false, "event": null}
+  ],
+  "refresh_eta": {"stale_grace_minutes": 0, "eta_days_min": 1, "eta_days_max": 30},
+  "set_state": {
+    "happened_hours": -1,
+    "events": {
+      "in-transit": {"status": "IN_TRANSIT", "eta_hours": 336, "same_day": false},
+      "out-for-delivery": {"status": "OUT_FOR_DELIVERY", "eta_hours": 3, "same_day": true},
+      "delivered": {"status": "DELIVERED", "eta_hours": null, "same_day": false},
+      "attempted-delivery": {"status": "ATTEMPTED_DELIVERY", "eta_hours": 24, "same_day": false},
+      "delayed": {"status": "DELAYED", "eta_hours": 96, "same_day": false}
+    }
+  }
+}

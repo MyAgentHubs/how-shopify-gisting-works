@@ -1,0 +1,194 @@
+[project]
+name = "gisting"
+version = "0.0.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "tokenizers==0.23.2",
+]
+
+[project.optional-dependencies]
+model = [
+    "safetensors==0.8.0",
+    "torch==2.14.0",
+    "transformers==5.17.0",
+]
+
+[build-system]
+requires = ["uv_build==0.11.16"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "deptry==0.25.1",
+    "hypothesis==6.168.3",
+    "import-linter==2.15",
+    "pyright==1.1.414",
+    "pytest==9.1.1",
+    "ruff==0.16.10",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+preview = true
+include = ["*.py"]
+extend-exclude = ["legacy", "shopify-app", "artifacts", "dist", "bin", "lib", "include"]
+
+[tool.ruff.lint]
+explicit-preview-rules = true
+select = [
+    "E", "F", "I", "UP", "B", "SIM", "C901",
+    "PLR0911", "PLR0912", "PLR0913", "PLR0915", "PLR1702", "PLR2004",
+    "T201", "ERA001", "BLE001", "S110", "S112", "TRY",
+    "PGH003", "PGH004", "RUF100", "ANN401",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 5
+max-nested-blocks = 3
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["PLR2004"]
+
+[tool.pyright]
+include = ["src", "scripts", "tests"]
+exclude = ["**/__pycache__", "legacy", "shopify-app", "artifacts", "dist"]
+pythonVersion = "3.11"
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "basic"
+strict = [
+    "src/gisting/prompt",
+    "src/gisting/manifest",
+    "src/gisting/tools",
+    "src/gisting/shopify",
+    "src/gisting/kb",
+    "src/gisting/agent",
+    "src/gisting/eval",
+    "src/gisting/serve",
+    "src/gisting/__init__.py",
+    "scripts",
+    "tests/agent",
+    "tests/eval",
+    "tests/fakes",
+    "tests/kb",
+    "tests/manifest",
+    "tests/prompt",
+    "tests/scripts",
+    "tests/serve",
+    "tests/shopify",
+    "tests/tools",
+]
+reportUnnecessaryTypeIgnoreComment = true
+
+[[tool.pyright.executionEnvironments]]
+root = "src/gisting/model_server"
+extraPaths = ["src"]
+reportMissingImports = "none"
+
+[[tool.pyright.executionEnvironments]]
+root = "src/gisting/training"
+extraPaths = ["src"]
+reportMissingImports = "none"
+
+[[tool.pyright.executionEnvironments]]
+root = "tests/model_server"
+extraPaths = ["src", "tests"]
+reportMissingImports = "none"
+reportMissingParameterType = "error"
+reportMissingTypeArgument = "error"
+reportUnusedImport = "error"
+reportUnusedVariable = "error"
+reportPrivateUsage = "error"
+reportUnnecessaryIsInstance = "error"
+reportUnnecessaryComparison = "error"
+reportUnnecessaryCast = "error"
+
+[[tool.pyright.executionEnvironments]]
+root = "tests/training"
+extraPaths = ["src", "tests"]
+reportMissingImports = "none"
+reportMissingParameterType = "error"
+reportMissingTypeArgument = "error"
+reportUnusedImport = "error"
+reportUnusedVariable = "error"
+reportPrivateUsage = "error"
+reportUnnecessaryIsInstance = "error"
+reportUnnecessaryComparison = "error"
+reportUnnecessaryCast = "error"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+addopts = "-m 'not live'"
+markers = ["live: hits real external systems; run locally with pytest -m live"]
+
+[tool.deptry]
+known_first_party = ["gisting", "guardlib", "schema_to_ts", "ts_comments","conftest", "fakes"]
+extend_exclude = ["legacy", "shopify-app", "artifacts", "dist", "bin", "lib", "include"]
+
+[tool.importlinter]
+root_package = "gisting"
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "production code does not import test tooling"
+type = "forbidden"
+source_modules = ["gisting"]
+forbidden_modules = ["pytest", "unittest", "fakes"]
+
+[[tool.importlinter.contracts]]
+name = "shopify depends on no other gisting subpackage"
+type = "forbidden"
+source_modules = ["gisting.shopify"]
+forbidden_modules = [
+    "gisting.prompt",
+    "gisting.manifest",
+    "gisting.tools",
+    "gisting.kb",
+    "gisting.agent",
+    "gisting.model_server",
+    "gisting.training",
+    "gisting.eval",
+]
+
+[[tool.importlinter.contracts]]
+name = "eval grades from data and prompt only"
+type = "forbidden"
+source_modules = ["gisting.eval"]
+forbidden_modules = [
+    "gisting.agent",
+    "gisting.tools",
+    "gisting.kb",
+    "gisting.manifest",
+    "gisting.model_server",
+    "gisting.training",
+]
+
+[[tool.importlinter.contracts]]
+name = "eval imports only the json typing helpers of shopify"
+type = "forbidden"
+source_modules = ["gisting.eval"]
+forbidden_modules = ["gisting.shopify"]
+ignore_imports = ["gisting.eval.* -> gisting.shopify.jsonvalue"]
+
+[[tool.importlinter.contracts]]
+name = "layers: training and serve over agent and eval over tools and model_server over leaf packages"
+type = "layers"
+containers = ["gisting"]
+layers = [
+    "(training) | (serve)",
+    "(agent) | (eval)",
+    "tools | (model_server)",
+    "(shopify) | (kb)",
+    "(prompt) : (manifest)",
+]
+
+[[tool.importlinter.contracts]]
+name = "serve does not import eval or training"
+type = "forbidden"
+source_modules = ["gisting.serve"]
+forbidden_modules = ["gisting.eval", "gisting.training"]

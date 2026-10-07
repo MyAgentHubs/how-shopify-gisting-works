@@ -1,0 +1,11 @@
+{
+  "price_max_age_days": 45,
+  "email_shape": "^[a-z2-7]{10}@orders\\.example\\.com$",
+  "placeholder_email": "^([a-z2-7])\\1{9}@",
+  "sitekey_shape": "^[0-3]x[A-Za-z0-9_-]{20,30}$",
+  "test_sitekey": "^[123]x",
+  "link_shape": "^https://\\S+$",
+  "placeholder_link": "#pending|(?<![A-Za-z0-9])(TODO|TBD)(?![A-Za-z0-9])|PLACEHOLDER|^[a-z][a-z0-9+.-]*://([^/?#]*[.@])?example\\.",
+  "placeholder_copy": "[\\[【]\\s*PLACEHOLDER",
+  "required_links": []
+}

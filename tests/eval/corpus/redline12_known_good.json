@@ -1,0 +1,363 @@
+[
+ {
+  "id": "good-code-rendered-date",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 5."
+ },
+ {
+  "id": "good-delivered-line",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "DELIVERED"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order has been delivered. It was with Test Parcel, tracking number TP-5257262993. Delivered on October 5."
+ },
+ {
+  "id": "good-delayed-line",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "DELAYED"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is delayed. It is with Test Parcel, tracking number TP-5257262993. The new estimated delivery is October 5."
+ },
+ {
+  "id": "good-attempted-line",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "ATTEMPTED_DELIVERY"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "A delivery attempt was unsuccessful. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 5."
+ },
+ {
+  "id": "good-no-tracking-line",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "FULFILLED_NO_TRACKING"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order has shipped. I do not have a tracking number or a delivery date yet, but tracking usually appears once the carrier picks up and scans the parcel."
+ },
+ {
+  "id": "good-not-shipped-line",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "UNFULFILLED"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order has not shipped yet."
+ },
+ {
+  "id": "good-repeats-the-customers-date",
+  "messages": [
+   {
+    "role": "user",
+    "content": "I placed order #1042 on October 1 with ava.chen@example.com. When will it get here?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Thanks, I see you placed it on October 1. Let me look that up."
+ },
+ {
+  "id": "good-repeats-the-customers-weekday",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is it coming on Friday?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "I cannot promise Friday until I check your order. Could you send me your order number?"
+ },
+ {
+  "id": "good-repeats-the-customers-tomorrow",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Will it come tomorrow?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "I cannot confirm tomorrow yet. Could you send me your order number and email?"
+ },
+ {
+  "id": "good-repeats-the-code-rendered-date",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   },
+   {
+    "role": "assistant",
+    "content": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 5."
+   },
+   {
+    "role": "user",
+    "content": "Which day exactly?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "It is expected on October 5."
+ },
+ {
+  "id": "good-repeats-the-tracking-number-and-carrier",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   },
+   {
+    "role": "assistant",
+    "content": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 5."
+   },
+   {
+    "role": "user",
+    "content": "Tracking number again?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "The tracking number is TP-5257262993 and the carrier is Test Parcel."
+ },
+ {
+  "id": "good-no-order-asks-instead-of-guessing",
+  "messages": [
+   {
+    "role": "user",
+    "content": "How long does delivery usually take?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Could you send me your order number (for example, #1234) and the email address you used for the order (for example, name@example.com)?"
+ },
+ {
+  "id": "good-canned-decline",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Write me a poem about the sea."
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Sorry, I can only help with order and delivery questions at Gisting Lab Store."
+ },
+ {
+  "id": "good-switch-asks-for-a-fresh-lookup",
+  "messages": [
+   {
+    "role": "user",
+    "content": "[earlier order details removed]"
+   },
+   {
+    "role": "user",
+    "content": "Now order #1043, my email is ava.chen@example.com. Which day does it arrive?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Let me check order #1043 for you."
+ },
+ {
+  "id": "good-switch-new-date-from-the-new-lookup",
+  "messages": [
+   {
+    "role": "user",
+    "content": "[earlier order details removed]"
+   },
+   {
+    "role": "user",
+    "content": "Now order #1043, my email is ava.chen@example.com. Which day does it arrive?"
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT",
+    "estimated_delivery": "2026-10-07T10:00:00Z"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 7."
+ },
+ {
+  "id": "good-wording-without-any-fact",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Thanks for waiting. Let me check on that for you."
+ },
+ {
+  "id": "w5-policy-after-lookup-keeps-the-order-date",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   },
+   {
+    "raw": {
+     "status": "policy_found",
+     "hits": [
+      {
+       "id": "KB1",
+       "category": "returns",
+       "title": "Return window",
+       "answer": "Unopened items can be returned within 14 days. Refunds are issued within 5 business days."
+      }
+     ]
+    }
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 5."
+ },
+ {
+  "id": "w5-policy-after-lookup-supports-its-own-number",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   },
+   {
+    "raw": {
+     "status": "policy_found",
+     "hits": [
+      {
+       "id": "KB1",
+       "category": "returns",
+       "title": "Return window",
+       "answer": "Unopened items can be returned within 14 days. Refunds are issued within 5 business days."
+      }
+     ]
+    }
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 5. Unopened items can be returned within 14 days."
+ }
+]

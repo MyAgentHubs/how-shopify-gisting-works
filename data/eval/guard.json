@@ -1,0 +1,20 @@
+{
+  "paths": [
+    "eval/baseline.json",
+    "eval/metrics.toml",
+    ".github/allowed_signers",
+    ".github/workflows/ci.yml",
+    "data/eval/guard.json",
+    "src/gisting/eval/baseline*.py",
+    "src/gisting/eval/ratchet.py",
+    "src/gisting/eval/ratchet_audit*.py",
+    "src/gisting/eval/report_identity.py",
+    "src/gisting/eval/report.py",
+    "src/gisting/eval/report_tokens.py",
+    "src/gisting/eval/registry.py",
+    "src/gisting/eval/stats.py",
+    "src/gisting/eval/cli_baseline.py",
+    "src/gisting/eval/guard_*.py",
+    "scripts/check_eval_ratchet.py"
+  ]
+}

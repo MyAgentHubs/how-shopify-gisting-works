@@ -1,0 +1,22 @@
+{
+  "examples": [
+    {
+      "id": "in-transit",
+      "label_key": "try.example.in_transit",
+      "order": "#1006",
+      "scenario": "IN_TRANSIT",
+      "email": "qdgxwwrmrp@orders.example.com"
+    },
+    {
+      "id": "unfulfilled",
+      "label_key": "try.example.unfulfilled",
+      "order": "#1022",
+      "scenario": "UNFULFILLED",
+      "email": "adlmbuiyxt@orders.example.com"
+    },
+    {
+      "id": "human",
+      "label_key": "try.example.human"
+    }
+  ]
+}

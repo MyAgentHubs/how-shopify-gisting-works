@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": [
+    "apps/*/functions/**/*.ts",
+    "apps/gateway/counter-worker/src/index.ts",
+    "apps/web/src/main.ts",
+    "apps/web/preview/main.ts"
+  ],
+  "project": ["apps/**/*.ts", "apps/**/*.mjs", "contracts/**/*.ts", "eslint-rules/**/*.mjs"],
+  "ignore": ["contracts/**"],
+  "ignoreDependencies": ["cloudflare"]
+}

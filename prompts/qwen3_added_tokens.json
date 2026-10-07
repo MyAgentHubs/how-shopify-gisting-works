@@ -1,0 +1,32 @@
+{
+  "sources": ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B-Instruct-2507"],
+  "source_file_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+  "added_tokens": [
+    {"id": 151643, "content": "<|endoftext|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151644, "content": "<|im_start|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151645, "content": "<|im_end|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151646, "content": "<|object_ref_start|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151647, "content": "<|object_ref_end|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151648, "content": "<|box_start|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151649, "content": "<|box_end|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151650, "content": "<|quad_start|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151651, "content": "<|quad_end|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151652, "content": "<|vision_start|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151653, "content": "<|vision_end|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151654, "content": "<|vision_pad|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151655, "content": "<|image_pad|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151656, "content": "<|video_pad|>", "special": true, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151657, "content": "<tool_call>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151658, "content": "</tool_call>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151659, "content": "<|fim_prefix|>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151660, "content": "<|fim_middle|>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151661, "content": "<|fim_suffix|>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151662, "content": "<|fim_pad|>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151663, "content": "<|repo_name|>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151664, "content": "<|file_sep|>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151665, "content": "<tool_response>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151666, "content": "</tool_response>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151667, "content": "<think>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false},
+    {"id": 151668, "content": "</think>", "special": false, "single_word": false, "lstrip": false, "rstrip": false, "normalized": false}
+  ]
+}

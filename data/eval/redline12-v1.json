@@ -1,0 +1,4 @@
+{
+  "date_problems": ["date:", "month:", "weekday:", "relative_time:", "duration:"],
+  "duration": "(?<![\\w.])(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|several|few|couple of)(?:\\s*(?:-|–|to)\\s*(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve))?\\s+(?:business\\s+|working\\s+)?(?:days?|weeks?|hours?)(?![\\w])"
+}

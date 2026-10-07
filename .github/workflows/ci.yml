@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Install gitleaks
+        run: |
+          curl -fsSL https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz | sudo tar -xz -C /usr/local/bin gitleaks
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/tokenizer
+          key: tokenizer-${{ hashFiles('data/eval/tokenizer-pin.json') }}
+      - name: Fetch the pinned tokenizer
+        run: bash scripts/fetch_tokenizer.sh "$RUNNER_TEMP/tokenizer"
+      - run: make check
+        env:
+          GISTING_MODEL_DIR: ${{ runner.temp }}/tokenizer
+          GISTING_EVAL_CASES_BASE: ${{ github.event.before }}
+          RATCHET_BASE: ${{ github.event.before }}

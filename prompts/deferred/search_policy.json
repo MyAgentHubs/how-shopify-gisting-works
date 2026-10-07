@@ -1,0 +1,15 @@
+{
+  "name": "search_policy",
+  "description": "Find the answer to a general question about Gisting Lab Store, such as shipping costs, delivery times, returns, refunds, exchanges, payment, cancellations and changes, damaged or lost items, privacy and contact details. Do not use it for a specific order.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "The customer's own words from their latest message, without any order number or email address."
+      }
+    },
+    "required": ["query"],
+    "additionalProperties": false
+  }
+}

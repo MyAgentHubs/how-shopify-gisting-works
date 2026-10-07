@@ -1,0 +1,11 @@
+{
+  "decision": "docs/decisions/0007-search-policy-wired-and-rules-frozen.md",
+  "rules_sha256": "069d997a4d4eb24e10a5cb7b7dc274565f334d15c5f1b39db6413f2b01fefaa7",
+  "reply_phrases_sha256": "9dc3036a79f6ab64d045fad8d68868c24b9e94a4dbf71d08ac3c3093bc99d8d4",
+  "tool_files_sha256": {
+    "handoff_to_human.json": "5fef2a44d86d08b9193a56c6e498792d1ba679ca3c99f42271ccbef94420c386",
+    "lookup_order.json": "6b025732e49e3f7285b1391814babee75509ab08be895e1bff07c1013e7e9308",
+    "search_policy.json": "1bd66133d39de4c7f5ef89d206d7e5e3a9cdb59b272e153655c99582a6760c39",
+    "send_shipping_reminder.json": "4816403cb2ccbc4dc52f655024e91132764c02613e5a409ca379b30fd0881184"
+  }
+}

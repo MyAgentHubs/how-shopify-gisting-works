@@ -1,0 +1,11 @@
+{
+  "k": 16,
+  "seed": 20261002,
+  "lr": 0.005,
+  "epochs": 6,
+  "batch_size": 4,
+  "max_len": 2560,
+  "grad_clip": 1.0,
+  "init": "chunk_mean",
+  "gradient_checkpointing": true
+}

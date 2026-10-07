@@ -1,0 +1,170 @@
+[
+ {
+  "id": "pb-extra-argument",
+  "category": "policy_question",
+  "user": "How long do I have to send something back?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"send something back\", \"order_number\": \"#1042\"}}\n</tool_call>",
+  "problem": "unexpected_arguments"
+ },
+ {
+  "id": "pb-no-query-argument",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {}}\n</tool_call>",
+  "problem": "unexpected_arguments"
+ },
+ {
+  "id": "pb-another-key-instead-of-query",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"q\": \"ship Canada\"}}\n</tool_call>",
+  "problem": "unexpected_arguments"
+ },
+ {
+  "id": "pb-query-word-not-in-the-message",
+  "category": "policy_question",
+  "user": "How long do I have to send something back?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"return policy window\"}}\n</tool_call>",
+  "problem": "query_term_not_said"
+ },
+ {
+  "id": "pb-query-adds-a-plural",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"shipping Canada\"}}\n</tool_call>",
+  "problem": "query_term_not_said"
+ },
+ {
+  "id": "pb-query-word-only-in-an-earlier-form",
+  "category": "policy_question",
+  "user": "Refunds please",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"refund\"}}\n</tool_call>",
+  "problem": "query_term_not_said"
+ },
+ {
+  "id": "pb-query-has-an-email",
+  "category": "policy_question",
+  "user": "How do returns work? My email is ava.chen@example.com.",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"ava.chen@example.com\"}}\n</tool_call>",
+  "problem": "query_has_email"
+ },
+ {
+  "id": "pb-query-has-an-order-number",
+  "category": "policy_question",
+  "user": "Returns for #1042, what is the policy?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"returns 1042 policy\"}}\n</tool_call>",
+  "problem": "query_has_order_number"
+ },
+ {
+  "id": "pb-query-has-an-order-number-with-hash",
+  "category": "policy_question",
+  "user": "Returns for #1042, what is the policy?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"returns #1042\"}}\n</tool_call>",
+  "problem": "query_has_order_number"
+ },
+ {
+  "id": "pb-empty-query",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"\"}}\n</tool_call>",
+  "problem": "empty_query"
+ },
+ {
+  "id": "pb-query-of-punctuation-only",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"?!\"}}\n</tool_call>",
+  "problem": "empty_query"
+ },
+ {
+  "id": "pb-query-is-not-a-string",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": 5}}\n</tool_call>",
+  "problem": "query_not_a_string"
+ },
+ {
+  "id": "pb-query-is-a-list",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": [\"ship\", \"Canada\"]}}\n</tool_call>",
+  "problem": "query_not_a_string"
+ },
+ {
+  "id": "pb-wrong-tool-for-a-policy-question",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"lookup_order\", \"arguments\": {\"order_number\": \"#1042\", \"email\": \"ava.chen@example.com\"}}\n</tool_call>",
+  "problem": "wrong_tool_name"
+ },
+ {
+  "id": "pb-handoff-for-a-policy-question",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"handoff_to_human\", \"arguments\": {}}\n</tool_call>",
+  "problem": "wrong_tool_name"
+ },
+ {
+  "id": "pb-no-call-answers-from-memory",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "Yes, we ship to Canada.",
+  "problem": "expected_exactly_one_tool_call"
+ },
+ {
+  "id": "pb-refuses-a-policy-question",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "Sorry, I can only help with order and delivery questions at Gisting Lab Store.",
+  "problem": "expected_exactly_one_tool_call"
+ },
+ {
+  "id": "pb-two-searches",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"ship\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"Canada\"}}\n</tool_call>",
+  "problem": "expected_exactly_one_tool_call"
+ },
+ {
+  "id": "pb-long-text-with-the-call",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "Let me look into our shipping rules for you, this can take a moment while I check the policy pages and see what applies to your question. <tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"ship Canada\"}}\n</tool_call>",
+  "problem": "long_content_with_call"
+ },
+ {
+  "id": "pb-outside-kb-answers-from-memory",
+  "category": "policy_outside_kb",
+  "user": "Do you offer gift wrapping?",
+  "output": "We do not offer gift wrapping.",
+  "problem": "expected_exactly_one_tool_call"
+ },
+ {
+  "id": "pb-outside-kb-refused",
+  "category": "policy_outside_kb",
+  "user": "Can I pay with cryptocurrency?",
+  "output": "Sorry, I can only help with order and delivery questions at Gisting Lab Store.",
+  "problem": "expected_exactly_one_tool_call"
+ },
+ {
+  "id": "pb-outside-kb-query-invents-words",
+  "category": "policy_outside_kb",
+  "user": "Is there a two year warranty on the mug?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"warranty policy mug\"}}\n</tool_call>",
+  "problem": "query_term_not_said"
+ },
+ {
+  "id": "pb-order-question-searches-instead-of-asking",
+  "category": "order_no_email",
+  "user": "What is the return window for order #1042?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"return window\"}}\n</tool_call>",
+  "problem": "unexpected_tool_call"
+ },
+ {
+  "id": "pb-order-question-searches-instead-of-the-lookup",
+  "category": "order_full",
+  "user": "Can I still return order #1042? My email is ava.chen@example.com.",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"return order\"}}\n</tool_call>",
+  "problem": "wrong_tool_name"
+ }
+]

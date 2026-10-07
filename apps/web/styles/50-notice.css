@@ -1,0 +1,4 @@
+.page-notice{margin:0;padding:12px 32px;background:var(--accent-soft);color:var(--ink);font-size:14px;line-height:1.5;text-align:center;text-wrap:balance;border-bottom:1px solid var(--line)}
+@media (max-width:820px){
+  .page-notice{padding:12px 20px}
+}

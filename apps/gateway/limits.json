@@ -1,0 +1,17 @@
+{
+  "maxMessageChars": 300,
+  "maxBodyBytes": 4096,
+  "maxMessagesPerSession": 10,
+  "maxFullComparesPerSession": 3,
+  "maxRequestsPerIpPerDay": 30,
+  "maxRequestsPerSitePerDay": 1000,
+  "counterTtlSeconds": 86400,
+  "counterTimeoutMs": 1500,
+  "turnstileTimeoutMs": 3000,
+  "ticketTtlSeconds": 1800,
+  "ticketClockSkewSeconds": 5,
+  "minSecretChars": 32,
+  "healthTimeoutMs": 2000,
+  "generateTimeoutMs": 25000,
+  "sessionIdPattern": "^[A-Za-z0-9_-]{8,64}$"
+}

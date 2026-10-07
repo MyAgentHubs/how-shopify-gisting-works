@@ -1,0 +1,8 @@
+{
+  "status": "approved",
+  "lang": "ko",
+  "native_review": "approved_draft",
+  "strings": {
+    "page.notice": "이 언어 버전은 준비 중입니다. 영어 버전을 표시합니다."
+  }
+}

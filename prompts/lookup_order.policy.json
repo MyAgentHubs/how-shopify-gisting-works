@@ -1,0 +1,22 @@
+{
+  "cache_ttl_seconds": 45,
+  "failure_limit_per_session": 5,
+  "field_sources": {
+    "canary": "shopify",
+    "carrier": "shopify",
+    "delivered_at": "simulated",
+    "estimated_delivery": "simulated",
+    "fulfillment_status": "shopify",
+    "order_number": "shopify",
+    "tracking_number": "shopify",
+    "transport_status": "simulated",
+    "updated_at": "simulated"
+  },
+  "order_range": {
+    "max": 1101,
+    "min": 1001
+  },
+  "required_tags": [
+    "shipment-plan-v1"
+  ]
+}

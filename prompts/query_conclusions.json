@@ -1,0 +1,75 @@
+{
+  "no_match_reply": [
+    "couldn't find an order matching",
+    "could not find an order matching",
+    "no order (?:matches|matching)",
+    "check both and try again"
+  ],
+  "locked_reply": [
+    "order lookups? (?:is|are) locked",
+    "locked for this chat",
+    "too many unsuccessful attempts"
+  ],
+  "unavailable_reply": [
+    "order lookups? (?:is|are) (?:not available|unavailable)",
+    "lookup (?:is|was) (?:not available|unavailable)"
+  ],
+  "status_word": [
+    "in transit",
+    "out for delivery",
+    "delivered",
+    "shipped",
+    "dispatched",
+    "unfulfilled",
+    "fulfilled",
+    "on its way",
+    "on the way",
+    "en route",
+    "delayed",
+    "has arrived",
+    "being prepared",
+    "attempted delivery",
+    "delivery (?:was )?attempted"
+  ],
+  "order_stage": [
+    "(?:is|are|was|were|has been|have been) (?:being )?(?:packed|prepared|processed|processing)",
+    "on hold",
+    "(?:was|has been) (?:cancell?ed|picked up)",
+    "ready for (?:pickup|collection)",
+    "left (?:our|the) warehouse"
+  ],
+  "arrival_assertion": [
+    "(?<!when it )(?<!when they )(?:is|are|was|were) (?:expected|scheduled|set|estimated) (?:to|for|on|by)"
+  ],
+  "tracking_token": [
+    "[A-Za-z]{2,}-\\d{4,}",
+    "1Z[0-9A-Z]{16}",
+    "\\d{10,}"
+  ],
+  "carrier": [
+    "test parcel",
+    "fedex",
+    "ups",
+    "dhl",
+    "usps",
+    "royal mail",
+    "canada post",
+    "australia post",
+    "dpd",
+    "hermes",
+    "evri",
+    "yodel",
+    "tnt",
+    "aramex",
+    "gls",
+    "postnl",
+    "la poste",
+    "deutsche post",
+    "sf express",
+    "yamato",
+    "amazon logistics",
+    "ontrac",
+    "lasership",
+    "purolator"
+  ]
+}

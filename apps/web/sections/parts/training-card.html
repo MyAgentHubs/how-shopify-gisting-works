@@ -1,0 +1,14 @@
+<div class="og-card og-train">
+  <div class="og-thead">
+    <h3><span class="og-tic" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></svg></span>{{copy:train.title}}</h3>
+    <span class="og-tag">{{copy:fact.model}}</span>
+  </div>
+  <ol class="og-steps">
+    <li><span class="og-sn">1</span><div><b>{{copy:train.teacher}}</b><p>{{copy:train.teacher_text}}</p><div class="og-doc" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><em class="og-num">{{data:numbers.rulesFull|int}} {{copy:gisting.unit}}</em></div></li>
+    <li><span class="og-sn">2</span><div><b>{{copy:train.distil}}</b><p>{{copy:train.distil_text}}</p><div class="og-gt" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><em class="og-num">{{data:numbers.rulesGist|int}} {{copy:gisting.unit}}</em><p class="og-proof"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>{{copy:train.fingerprint}}</p></div></li>
+    <li><span class="og-sn">3</span><div><b>{{copy:train.filter}}</b><p>{{copy:train.filter_text}}</p><div class="og-rl" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div></div></li>
+  </ol>
+  <p class="og-why"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg><span>{{copy:train.small_model}}</span></p>
+  <p class="og-trl">{{when:links.research_article|research-link}}<span>{{copy:train.credit}} <a href="https://shopify.engineering/gisting" rel="noopener">{{copy:train.credit_link}}</a></span></p>
+  <p class="og-refs">{{copy:train.refs}} <a href="https://arxiv.org/abs/2304.08467" rel="noopener">{{copy:train.paper_link}}</a></p>
+</div>

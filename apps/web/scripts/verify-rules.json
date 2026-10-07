@@ -1,0 +1,30 @@
+{
+  "max_visible_words": 750,
+  "public_order_count": 8,
+  "word_scope_ids": ["top", "real", "gisting", "savings", "agent", "rules"],
+  "order_email": "[a-z2-7]{10}@orders\\.example\\.com",
+  "prefill_order": "#?\\s*\\d{3,}",
+  "private_names": [
+    "agent_policy",
+    "refusal_words",
+    "ask_detection",
+    "done_claims",
+    "query_conclusions",
+    "time_words",
+    "reply_phrases",
+    "chat_variants"
+  ],
+  "forbidden": [
+    { "name": "the benchmarks data or the red lines", "pattern": "benchmarks\\.json|Benchmarks|red_lines" },
+    { "name": "www header chrome", "pattern": "header\\.mh-global|mh-language" },
+    { "name": "a hero eyebrow that www rewrites", "pattern": "\\.hero\\s+\\.eyebrow" },
+    { "name": "hardware or hosting details", "pattern": "\\b(?:Apple (?:Silicon|hardware|device|computer)|Ma[c](?:Book| mini|OS)?|Raspberry Pi|Intel|AMD|NVIDIA|Dell|ThinkPad|M[1-5] (?:Pro|Max|Ultra))\\b|家庭[托]管|home[- ]host(?:ed|ing)|self[- ]hosted box|\\bLAN\\b|\\.lo[c]al\\b|/opt/home[b]rew|launch[d]|Cloudflare Tunne[l]", "flags": "i" },
+    { "name": "a speed claim", "pattern": "\\bfaster\\b|\\bquicker\\b|\\bsnappier\\b|lower latency|更快|低延迟|提速|加速", "flags": "i" }
+  ],
+  "allowed_phrases": ["token 变少，不等于我们声称更快。"],
+  "stray_copy_file": "(?:^|/)copy/[^/]+\\.json$",
+  "preview_only_file": "(?:^|/)js/apps/web/(?:fakes|preview)/",
+  "preview_entry": "<script type=\"module\" src=\"[^\"]*/preview/[^\"]*\"",
+  "draft_marker": "build-state",
+  "placeholder": "\\[PLACEHOLDER"
+}

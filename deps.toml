@@ -1,0 +1,79 @@
+[[dependency]]
+name = "ruff"
+reason = "Linter and formatter that enforces complexity, size and no-comment rules."
+
+[[dependency]]
+name = "pyright"
+reason = "Static type checker; strict for core packages, basic for training."
+
+[[dependency]]
+name = "pytest"
+reason = "Test runner for guard scripts and later unit and contract tests."
+
+[[dependency]]
+name = "import-linter"
+reason = "Enforces one-way layer dependencies between gisting subpackages."
+
+[[dependency]]
+name = "deptry"
+reason = "Detects unused, missing and transitive dependencies against pyproject."
+
+[[dependency]]
+name = "hypothesis"
+reason = "Property tests: every demo order and wrong-email variant yields the same no-match output."
+
+[[dependency]]
+name = "uv-build"
+reason = "Build backend that makes the src layout package installable."
+
+[[dependency]]
+name = "tokenizers"
+reason = "Fast tokenizer the prompt layer uses to build token ids; light wheel, installed in CI."
+
+[[dependency]]
+name = "torch"
+reason = "Runs the local model on MPS or CPU; heavy, only in the model extra and absent from CI."
+
+[[dependency]]
+name = "transformers"
+reason = "Loads the Qwen3 weights and is the reference chat template for the golden test; model extra only."
+
+[[dependency]]
+name = "safetensors"
+reason = "Reads and writes the Gist vector artifact as a pickle-free tensor file; already pulled in by transformers, model extra only."
+
+[[dependency]]
+name = "typescript"
+reason = "Type checker for the gateway and web code; strict, noUncheckedIndexedAccess and exactOptionalPropertyTypes; pinned below 6.1 until typescript-eslint supports 7."
+
+[[dependency]]
+name = "eslint"
+reason = "Enforces size, complexity, depth and parameter limits and the no-comments rule on TypeScript."
+
+[[dependency]]
+name = "@eslint/js"
+reason = "ESLint's own recommended rule set, the base that the project rules extend."
+
+[[dependency]]
+name = "typescript-eslint"
+reason = "Type-aware lint rules such as no-floating-promises and ban-ts-comment."
+
+[[dependency]]
+name = "dependency-cruiser"
+reason = "Enforces one-way module layers and keeps test fakes out of production code in TypeScript."
+
+[[dependency]]
+name = "knip"
+reason = "Finds unused files, exports and dependencies in the TypeScript workspace."
+
+[[dependency]]
+name = "vitest"
+reason = "TypeScript test runner for the gateway and for the ESLint rule tests."
+
+[[dependency]]
+name = "@cloudflare/workers-types"
+reason = "Type-only definitions for Request, Response and Pages Functions; never imported at runtime."
+
+[[dependency]]
+name = "jsdom"
+reason = "DOM implementation for the web app tests; renders the chat page and the Under the hood panel without a browser."

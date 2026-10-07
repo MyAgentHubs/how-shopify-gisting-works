@@ -1,0 +1,16 @@
+{
+  "name": "send_shipping_reminder",
+  "description": "Send the team a reminder to ship an order. Call it only when the customer says yes to your offer to do that.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "order_number": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_number"
+    ],
+    "additionalProperties": false
+  }
+}

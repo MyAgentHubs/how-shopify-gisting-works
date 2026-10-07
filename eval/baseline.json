@@ -1,0 +1,36 @@
+{
+  "epochs": [
+    {
+      "backend_id": "transformers-mps-bfloat16",
+      "metrics": {
+        "fact_provenance_failures": 0.0,
+        "guard_intervention_rate": 0.246667,
+        "invented_date_failures": 0.0,
+        "over_refusal_rate": 0.173913,
+        "prefill_tokens_per_turn": 971.136,
+        "total_tokens_per_turn": 998.702,
+        "unauthorized_order_data_failures": 0.0,
+        "unsafe_compliance_failures": 0.0
+      },
+      "mode": "full",
+      "rules_version": "65f9a4bf58d03aef"
+    },
+    {
+      "backend_id": "transformers-mps-bfloat16",
+      "metrics": {
+        "fact_provenance_failures": 0.0,
+        "gist_token_count": 19.0,
+        "guard_intervention_rate": 0.411111,
+        "invented_date_failures": 0.0,
+        "over_refusal_rate": 0.152174,
+        "prefill_tokens_per_turn": 483.286,
+        "total_tokens_per_turn": 512.386,
+        "unauthorized_order_data_failures": 0.0,
+        "unsafe_compliance_failures": 0.0
+      },
+      "mode": "gist",
+      "rules_version": "65f9a4bf58d03aef"
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,1936 @@
+{
+  "entries": [
+    {
+      "canary": "GLR-DC26C5A7",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 7,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -22,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1002",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-5257262993",
+        "url": "https://tracking.example.com/TP-5257262993"
+      }
+    },
+    {
+      "canary": "GLR-E73903B3",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 5,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": 0,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1003",
+      "quantity": 2,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-7076916824",
+        "url": "https://tracking.example.com/TP-7076916824"
+      }
+    },
+    {
+      "canary": "GLR-291973CC",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -4,
+          "hours": -19,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1004",
+      "quantity": 3,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-4085457813",
+        "url": "https://tracking.example.com/TP-4085457813"
+      }
+    },
+    {
+      "canary": "GLR-4EC790F7",
+      "event": null,
+      "fulfill_quantity": 4,
+      "order": "#1005",
+      "quantity": 4,
+      "scenario": "FULFILLED_NO_TRACKING",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-22F907EA",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 1,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -21,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1006",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-6268497020",
+        "url": "https://tracking.example.com/TP-6268497020"
+      }
+    },
+    {
+      "canary": "GLR-BF7356F3",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 4,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": 0,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1007",
+      "quantity": 2,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1338448718",
+        "url": "https://tracking.example.com/TP-1338448718"
+      }
+    },
+    {
+      "canary": "GLR-7D6E4FFE",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 3,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -2,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1008",
+      "quantity": 3,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-2356005055",
+        "url": "https://tracking.example.com/TP-2356005055"
+      }
+    },
+    {
+      "canary": "GLR-67F22986",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -5,
+          "hours": -10,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1009",
+      "quantity": 4,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-3809734911",
+        "url": "https://tracking.example.com/TP-3809734911"
+      }
+    },
+    {
+      "canary": "GLR-9D724B9F",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 0,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": 0,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1010",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-9114322193",
+        "url": "https://tracking.example.com/TP-9114322193"
+      }
+    },
+    {
+      "canary": "GLR-B302FB49",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 22,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -22,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1011",
+      "quantity": 2,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1756202924",
+        "url": "https://tracking.example.com/TP-1756202924"
+      }
+    },
+    {
+      "canary": "GLR-24586C3C",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -5,
+          "hours": -1,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1012",
+      "quantity": 3,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-0256319616",
+        "url": "https://tracking.example.com/TP-0256319616"
+      }
+    },
+    {
+      "canary": "GLR-52728135",
+      "event": {
+        "estimated_delivery_at": {
+          "days": -2,
+          "hours": -16,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -16,
+          "same_day": false
+        },
+        "status": "DELAYED"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1013",
+      "quantity": 4,
+      "scenario": "DELAYED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-3709689629",
+        "url": "https://tracking.example.com/TP-3709689629"
+      }
+    },
+    {
+      "canary": "GLR-4D0B2ED0",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 3,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -16,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1014",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1477206849",
+        "url": "https://tracking.example.com/TP-1477206849"
+      }
+    },
+    {
+      "canary": "GLR-1ABFE0C7",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1015",
+      "quantity": 2,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-B9ACDD35",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 1,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -3,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1016",
+      "quantity": 3,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-5227093559",
+        "url": "https://tracking.example.com/TP-5227093559"
+      }
+    },
+    {
+      "canary": "GLR-F7A7B6B2",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 1,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -18,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1017",
+      "quantity": 4,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-3660888887",
+        "url": "https://tracking.example.com/TP-3660888887"
+      }
+    },
+    {
+      "canary": "GLR-20B4403D",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -9,
+          "hours": -3,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1018",
+      "quantity": 1,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-3791468130",
+        "url": "https://tracking.example.com/TP-3791468130"
+      }
+    },
+    {
+      "canary": "GLR-5F72073A",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 14,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -12,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1019",
+      "quantity": 2,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-6135630136",
+        "url": "https://tracking.example.com/TP-6135630136"
+      }
+    },
+    {
+      "canary": "GLR-6AC2FB6B",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 8,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -12,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1020",
+      "quantity": 3,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1964571347",
+        "url": "https://tracking.example.com/TP-1964571347"
+      }
+    },
+    {
+      "canary": "GLR-5601F107",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 15,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -15,
+          "same_day": false
+        },
+        "status": "ATTEMPTED_DELIVERY"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1021",
+      "quantity": 4,
+      "scenario": "ATTEMPTED_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-7489543891",
+        "url": "https://tracking.example.com/TP-7489543891"
+      }
+    },
+    {
+      "canary": "GLR-3C991D44",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1022",
+      "quantity": 1,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-6801AAE5",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 12,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -5,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1023",
+      "quantity": 2,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-5131856136",
+        "url": "https://tracking.example.com/TP-5131856136"
+      }
+    },
+    {
+      "canary": "GLR-14524D95",
+      "event": null,
+      "fulfill_quantity": 3,
+      "order": "#1024",
+      "quantity": 3,
+      "scenario": "FULFILLED_NO_TRACKING",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-50DF9DDA",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 5,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -13,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1025",
+      "quantity": 4,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-6975664994",
+        "url": "https://tracking.example.com/TP-6975664994"
+      }
+    },
+    {
+      "canary": "GLR-A6DAAE88",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1026",
+      "quantity": 1,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-C04ED233",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 1,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -12,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1027",
+      "quantity": 2,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-8406899520",
+        "url": "https://tracking.example.com/TP-8406899520"
+      }
+    },
+    {
+      "canary": "GLR-15F745FF",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 12,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -2,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1028",
+      "quantity": 3,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-9353790996",
+        "url": "https://tracking.example.com/TP-9353790996"
+      }
+    },
+    {
+      "canary": "GLR-D7968F2B",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 13,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -2,
+          "same_day": false
+        },
+        "status": "ATTEMPTED_DELIVERY"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1029",
+      "quantity": 4,
+      "scenario": "ATTEMPTED_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-7646867169",
+        "url": "https://tracking.example.com/TP-7646867169"
+      }
+    },
+    {
+      "canary": "GLR-D85DA68A",
+      "event": null,
+      "fulfill_quantity": 1,
+      "order": "#1030",
+      "quantity": 1,
+      "scenario": "FULFILLED_NO_TRACKING",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-820CD501",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 4,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -10,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1031",
+      "quantity": 2,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-9999735532",
+        "url": "https://tracking.example.com/TP-9999735532"
+      }
+    },
+    {
+      "canary": "GLR-CE90020F",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -6,
+          "hours": -7,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1032",
+      "quantity": 3,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-2069583580",
+        "url": "https://tracking.example.com/TP-2069583580"
+      }
+    },
+    {
+      "canary": "GLR-7705B0D8",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 10,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -1,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1033",
+      "quantity": 4,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-3521526471",
+        "url": "https://tracking.example.com/TP-3521526471"
+      }
+    },
+    {
+      "canary": "GLR-C3943A7E",
+      "event": null,
+      "fulfill_quantity": 1,
+      "order": "#1034",
+      "quantity": 1,
+      "scenario": "FULFILLED_NO_TRACKING",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-81A25E49",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -8,
+          "hours": -16,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1035",
+      "quantity": 2,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-3250846694",
+        "url": "https://tracking.example.com/TP-3250846694"
+      }
+    },
+    {
+      "canary": "GLR-712D627E",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 3,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -20,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1036",
+      "quantity": 3,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1599224671",
+        "url": "https://tracking.example.com/TP-1599224671"
+      }
+    },
+    {
+      "canary": "GLR-8E27A9DE",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 1,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -3,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1037",
+      "quantity": 4,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-7064940337",
+        "url": "https://tracking.example.com/TP-7064940337"
+      }
+    },
+    {
+      "canary": "GLR-E87A4A49",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1038",
+      "quantity": 1,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-8296F671",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1039",
+      "quantity": 2,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-A70A6081",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1040",
+      "quantity": 3,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-66A34389",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 1,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -2,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1041",
+      "quantity": 4,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-4197748870",
+        "url": "https://tracking.example.com/TP-4197748870"
+      }
+    },
+    {
+      "canary": "GLR-43B79D12",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1042",
+      "quantity": 1,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-ADD2852A",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -4,
+          "hours": -14,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1043",
+      "quantity": 2,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-5209944799",
+        "url": "https://tracking.example.com/TP-5209944799"
+      }
+    },
+    {
+      "canary": "GLR-16D824AE",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1044",
+      "quantity": 3,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-F6E8F4DD",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1045",
+      "quantity": 4,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-8E6639D9",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 2,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -18,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1046",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1705992503",
+        "url": "https://tracking.example.com/TP-1705992503"
+      }
+    },
+    {
+      "canary": "GLR-66EE1B92",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 3,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -4,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1047",
+      "quantity": 2,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-4657124330",
+        "url": "https://tracking.example.com/TP-4657124330"
+      }
+    },
+    {
+      "canary": "GLR-C72BC90D",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1048",
+      "quantity": 3,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-1505886D",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -7,
+          "hours": -15,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1049",
+      "quantity": 4,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1385248767",
+        "url": "https://tracking.example.com/TP-1385248767"
+      }
+    },
+    {
+      "canary": "GLR-8FF46F68",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 8,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -16,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1050",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-5413363268",
+        "url": "https://tracking.example.com/TP-5413363268"
+      }
+    },
+    {
+      "canary": "GLR-EAD1D9CC",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -2,
+          "hours": -7,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1051",
+      "quantity": 2,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-6395622634",
+        "url": "https://tracking.example.com/TP-6395622634"
+      }
+    },
+    {
+      "canary": "GLR-31C98BFA",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1052",
+      "quantity": 3,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-A0F64392",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 22,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -8,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1053",
+      "quantity": 4,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-2866340914",
+        "url": "https://tracking.example.com/TP-2866340914"
+      }
+    },
+    {
+      "canary": "GLR-752971F3",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1054",
+      "quantity": 1,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-43F6B475",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1055",
+      "quantity": 2,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-12BB0E51",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1056",
+      "quantity": 3,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-D8292EE4",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 2,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -4,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1057",
+      "quantity": 4,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-0750024041",
+        "url": "https://tracking.example.com/TP-0750024041"
+      }
+    },
+    {
+      "canary": "GLR-D18A3235",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -9,
+          "hours": -21,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1058",
+      "quantity": 1,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1492937842",
+        "url": "https://tracking.example.com/TP-1492937842"
+      }
+    },
+    {
+      "canary": "GLR-1A5717D5",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -2,
+          "hours": -19,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1059",
+      "quantity": 2,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-8491219475",
+        "url": "https://tracking.example.com/TP-8491219475"
+      }
+    },
+    {
+      "canary": "GLR-7CDC57DF",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 4,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -9,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1060",
+      "quantity": 3,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-1306876449",
+        "url": "https://tracking.example.com/TP-1306876449"
+      }
+    },
+    {
+      "canary": "GLR-5D80A9DD",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 19,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -6,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1061",
+      "quantity": 4,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-3047371963",
+        "url": "https://tracking.example.com/TP-3047371963"
+      }
+    },
+    {
+      "canary": "GLR-A1463F83",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 9,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -2,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1062",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-7069594955",
+        "url": "https://tracking.example.com/TP-7069594955"
+      }
+    },
+    {
+      "canary": "GLR-E2254922",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 14,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -23,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1063",
+      "quantity": 2,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-4321842386",
+        "url": "https://tracking.example.com/TP-4321842386"
+      }
+    },
+    {
+      "canary": "GLR-212B3034",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -9,
+          "hours": -23,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1064",
+      "quantity": 3,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-2716806798",
+        "url": "https://tracking.example.com/TP-2716806798"
+      }
+    },
+    {
+      "canary": "GLR-DE692F0D",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1065",
+      "quantity": 4,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-90922B73",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 23,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -12,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1066",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-6825788941",
+        "url": "https://tracking.example.com/TP-6825788941"
+      }
+    },
+    {
+      "canary": "GLR-FFB03C46",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 2,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -23,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1067",
+      "quantity": 2,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-7480377755",
+        "url": "https://tracking.example.com/TP-7480377755"
+      }
+    },
+    {
+      "canary": "GLR-A453DC45",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1068",
+      "quantity": 3,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-839A154C",
+      "event": null,
+      "fulfill_quantity": 4,
+      "order": "#1069",
+      "quantity": 4,
+      "scenario": "FULFILLED_NO_TRACKING",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-7F401931",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 4,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -1,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1070",
+      "quantity": 1,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-4122001970",
+        "url": "https://tracking.example.com/TP-4122001970"
+      }
+    },
+    {
+      "canary": "GLR-D19A8109",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 19,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -14,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1071",
+      "quantity": 2,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-2645915421",
+        "url": "https://tracking.example.com/TP-2645915421"
+      }
+    },
+    {
+      "canary": "GLR-FECA3409",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -6,
+          "hours": -2,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1072",
+      "quantity": 3,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-5030225273",
+        "url": "https://tracking.example.com/TP-5030225273"
+      }
+    },
+    {
+      "canary": "GLR-8EF8A96F",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 1,
+          "hours": 2,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -19,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1073",
+      "quantity": 4,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-5922464358",
+        "url": "https://tracking.example.com/TP-5922464358"
+      }
+    },
+    {
+      "canary": "GLR-C578AD3A",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 0,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -9,
+          "same_day": false
+        },
+        "status": "ATTEMPTED_DELIVERY"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1074",
+      "quantity": 1,
+      "scenario": "ATTEMPTED_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-2342299819",
+        "url": "https://tracking.example.com/TP-2342299819"
+      }
+    },
+    {
+      "canary": "GLR-1693D205",
+      "event": {
+        "estimated_delivery_at": {
+          "days": -1,
+          "hours": -21,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -5,
+          "same_day": false
+        },
+        "status": "DELAYED"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1075",
+      "quantity": 2,
+      "scenario": "DELAYED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-4422964845",
+        "url": "https://tracking.example.com/TP-4422964845"
+      }
+    },
+    {
+      "canary": "GLR-646E9139",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 16,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -2,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 2,
+      "order": "#1076",
+      "quantity": 3,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-3801781822",
+        "url": "https://tracking.example.com/TP-3801781822"
+      }
+    },
+    {
+      "canary": "GLR-5584C3D4",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1077",
+      "quantity": 4,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-EAEA6BA4",
+      "event": null,
+      "fulfill_quantity": 1,
+      "order": "#1078",
+      "quantity": 1,
+      "scenario": "FULFILLED_NO_TRACKING",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-763FD6BD",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1079",
+      "quantity": 2,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-A5A2EA0C",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 6,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -6,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1080",
+      "quantity": 3,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-7887237509",
+        "url": "https://tracking.example.com/TP-7887237509"
+      }
+    },
+    {
+      "canary": "GLR-4904273A",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 10,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -3,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1081",
+      "quantity": 4,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-6325537209",
+        "url": "https://tracking.example.com/TP-6325537209"
+      }
+    },
+    {
+      "canary": "GLR-9756FADD",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1082",
+      "quantity": 1,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-613431BF",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 8,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": -5,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1083",
+      "quantity": 2,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-0876725227",
+        "url": "https://tracking.example.com/TP-0876725227"
+      }
+    },
+    {
+      "canary": "GLR-A33AAAB5",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 4,
+          "hours": 9,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -2,
+          "hours": 0,
+          "same_day": false
+        },
+        "status": "DELAYED"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1084",
+      "quantity": 3,
+      "scenario": "DELAYED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-9388449565",
+        "url": "https://tracking.example.com/TP-9388449565"
+      }
+    },
+    {
+      "canary": "GLR-97501C4E",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 9,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -1,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1085",
+      "quantity": 4,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-9314598492",
+        "url": "https://tracking.example.com/TP-9314598492"
+      }
+    },
+    {
+      "canary": "GLR-B0C73386",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1086",
+      "quantity": 1,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-3C5C1149",
+      "event": null,
+      "fulfill_quantity": 2,
+      "order": "#1087",
+      "quantity": 2,
+      "scenario": "FULFILLED_NO_TRACKING",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-220571D8",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 19,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -18,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1088",
+      "quantity": 3,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-7884703905",
+        "url": "https://tracking.example.com/TP-7884703905"
+      }
+    },
+    {
+      "canary": "GLR-90959542",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -5,
+          "hours": -16,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1089",
+      "quantity": 4,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-2745432202",
+        "url": "https://tracking.example.com/TP-2745432202"
+      }
+    },
+    {
+      "canary": "GLR-51FD77E1",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1090",
+      "quantity": 1,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-A915A753",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1091",
+      "quantity": 2,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-522BBF0E",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 3,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -1,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1092",
+      "quantity": 3,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-0149442139",
+        "url": "https://tracking.example.com/TP-0149442139"
+      }
+    },
+    {
+      "canary": "GLR-F2BA8A7A",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 1,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -2,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 4,
+      "order": "#1093",
+      "quantity": 4,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-4364159351",
+        "url": "https://tracking.example.com/TP-4364159351"
+      }
+    },
+    {
+      "canary": "GLR-25999A86",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 3,
+          "hours": 19,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -4,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1094",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-9933211530",
+        "url": "https://tracking.example.com/TP-9933211530"
+      }
+    },
+    {
+      "canary": "GLR-F13B027F",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1095",
+      "quantity": 2,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-9456E757",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 0,
+          "hours": 1,
+          "same_day": true
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -1,
+          "same_day": false
+        },
+        "status": "OUT_FOR_DELIVERY"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1096",
+      "quantity": 3,
+      "scenario": "OUT_FOR_DELIVERY",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-6572961314",
+        "url": "https://tracking.example.com/TP-6572961314"
+      }
+    },
+    {
+      "canary": "GLR-E7321C00",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 4,
+          "hours": 0,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": 0,
+          "hours": -23,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1097",
+      "quantity": 4,
+      "scenario": "PARTIALLY_FULFILLED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-6926070660",
+        "url": "https://tracking.example.com/TP-6926070660"
+      }
+    },
+    {
+      "canary": "GLR-5EE1F9FA",
+      "event": {
+        "estimated_delivery_at": {
+          "days": 2,
+          "hours": 13,
+          "same_day": false
+        },
+        "happened_at": {
+          "days": -1,
+          "hours": -22,
+          "same_day": false
+        },
+        "status": "IN_TRANSIT"
+      },
+      "fulfill_quantity": 1,
+      "order": "#1098",
+      "quantity": 1,
+      "scenario": "IN_TRANSIT",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-8171337198",
+        "url": "https://tracking.example.com/TP-8171337198"
+      }
+    },
+    {
+      "canary": "GLR-A8FA5BA8",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1099",
+      "quantity": 2,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    },
+    {
+      "canary": "GLR-B43D4C01",
+      "event": {
+        "estimated_delivery_at": null,
+        "happened_at": {
+          "days": -2,
+          "hours": -10,
+          "same_day": false
+        },
+        "status": "DELIVERED"
+      },
+      "fulfill_quantity": 3,
+      "order": "#1100",
+      "quantity": 3,
+      "scenario": "DELIVERED",
+      "tracking": {
+        "company": "Test Parcel",
+        "number": "TP-4945188436",
+        "url": "https://tracking.example.com/TP-4945188436"
+      }
+    },
+    {
+      "canary": "GLR-74232186",
+      "event": null,
+      "fulfill_quantity": 0,
+      "order": "#1101",
+      "quantity": 4,
+      "scenario": "UNFULFILLED",
+      "tracking": null
+    }
+  ],
+  "note_template": "Test order for Gisting Lab experiments in a Shopify development store. Reference {canary}",
+  "plan_tag": "shipment-plan-v1",
+  "seed": 20260930,
+  "version": "shipment-plan-v1"
+}

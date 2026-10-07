@@ -1,0 +1,9 @@
+{
+  "decline": [
+    "(?:(?:(?:i'?m|i am) (?:very )?sorry|sorry|unfortunately|apologies),?(?: but)?,? )?i (?:can ?not|can'?t|am unable to|'m unable to|am not able to|'m not able to) (?:help|assist)(?: you)?(?: with)?(?: (?:that|this|it|those|these)(?: (?:request|question|topic|task|one))?| anything else| other (?:requests|questions|topics))?(?:,? sorry)?",
+    "(?:(?:(?:i'?m|i am) (?:very )?sorry|sorry|unfortunately|apologies),? )?(?:i )?(?:can|am able to|'m able to) only (?:help|assist)(?: you)? with (?:questions about )?(?:your )?orders?(?:(?:,| and| &|,? and) (?:deliver(?:y|ies)|shipping))?(?: (?:questions|queries|requests|matters))?(?: at (?:gisting lab store|this store|the store))?(?:,? sorry)?",
+    "(?:i'?m|i am) (?:only |just )?here to (?:help|assist)(?: you)? with (?:questions about )?(?:your )?orders?(?:(?:,| and| &|,? and) (?:deliver(?:y|ies)|shipping))?(?:-related (?:questions|queries))?(?: at (?:gisting lab store|this store|the store))?",
+    "my (?:current )?(?:assistance|help|capabilities|scope) (?:is|are) limited to (?:(?:assisting|helping)(?: you)? with )?(?:questions about )?(?:your )?orders?(?:(?:,| and| &|,? and) (?:deliver(?:y|ies)|shipping))?(?: at (?:gisting lab store|this store|the store))?",
+    "(?:(?:(?:i'?m|i am) (?:very )?sorry|sorry|unfortunately|apologies),? )?i (?:can ?not|can'?t|am unable to|'m unable to|am not able to|'m not able to) (?!.*\\b(?:but|however|here|here's|instead|though|although|except|unless|find|locate|look|see|check|verify|access|retrieve|track|order|orders|parcel|parcels|package|packages|email|account)\\b)[^,;:.!?]{1,100}"
+  ]
+}

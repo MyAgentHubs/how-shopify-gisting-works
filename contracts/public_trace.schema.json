@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PublicTrace",
+  "type": "object",
+  "properties": {
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tool": {
+            "type": "string"
+          },
+          "order_number": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "outcome": {
+            "enum": [
+              "completed",
+              "unavailable",
+              "locked"
+            ]
+          }
+        },
+        "required": [
+          "tool",
+          "order_number",
+          "outcome"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "knowledge": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^kb-[a-z0-9]+(-[a-z0-9]+)*$",
+            "maxLength": 64
+          },
+          "method": {
+            "enum": [
+              "bm25"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "method"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 3
+    },
+    "tokens": {
+      "type": "object",
+      "properties": {
+        "rules": {
+          "type": "integer"
+        },
+        "tools": {
+          "type": "integer"
+        },
+        "history": {
+          "type": "integer"
+        },
+        "tool_results": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "rules",
+        "tools",
+        "history",
+        "tool_results",
+        "total"
+      ],
+      "additionalProperties": false
+    },
+    "latency": {
+      "type": "object",
+      "properties": {
+        "first_token_ms": {
+          "type": "number"
+        },
+        "total_ms": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "first_token_ms",
+        "total_ms"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "tools",
+    "knowledge",
+    "tokens",
+    "latency"
+  ],
+  "additionalProperties": false
+}

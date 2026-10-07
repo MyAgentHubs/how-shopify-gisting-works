@@ -1,0 +1,19 @@
+{
+  "variants": [
+    {
+      "name": "qwen3-thinking-off",
+      "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "generation_suffix": [
+        {"control": "<think>"},
+        {"text": "\n\n"},
+        {"control": "</think>"},
+        {"text": "\n\n"}
+      ]
+    },
+    {
+      "name": "qwen3-instruct-2507",
+      "chat_template_sha256": "64f85b198065d0fba2a81f37e10ed68161ce2c19a754c7100e67e0ca2ee9c326",
+      "generation_suffix": []
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "max_tool_calls_per_turn": 2,
+  "max_invalid_tool_calls_per_turn": 1,
+  "max_new_tokens": 320,
+  "rules_echo": {
+    "words": 6,
+    "max_shared": 0,
+    "skip_paragraphs": 1,
+    "leak_markers": [
+      "lookup_order",
+      "handoff_to_human",
+      "send_shipping_reminder",
+      "search_policy",
+      "<tools>",
+      "<tool_call>",
+      "<tool_response>",
+      "<|im_start|>",
+      "<|im_end|>",
+      "tool definition",
+      "tool definitions",
+      "system prompt",
+      "system message",
+      "my instructions",
+      "initial instructions"
+    ],
+    "quotable_markers": [
+      "tool definition",
+      "tool definitions",
+      "system prompt",
+      "system message",
+      "my instructions",
+      "initial instructions"
+    ]
+  },
+  "grounded_arguments": {
+    "lookup_order": {
+      "order_number": "order_number",
+      "email": "email"
+    },
+    "send_shipping_reminder": {
+      "order_number": "order_number"
+    },
+    "search_policy": {
+      "query": "query_terms"
+    }
+  },
+  "query_limits": {
+    "max_chars": 160,
+    "max_terms": 16
+  },
+  "patterns": {
+    "email": "(?<![\\w.%+\\-\u0300-\u036f])[\\w.%+\\-\u0300-\u036f]+@[\\w\\-\u0300-\u036f]+(?:\\.[\\w\\-\u0300-\u036f]+)+",
+    "order_number": "(?<![\\w.,\\-/:$€£+@#])(#\\d+(?![\\w\\-/@]|[.,]\\d|\\s*(?:items?|pcs|pieces|units|dollars?|usd|eur|kg)\\b)|\\d+(?![\\w\\-/:@]|[.,]\\d|\\s*(?:items?|pcs|pieces|units|dollars?|usd|eur|kg)\\b))"
+  },
+  "order_hints": ["\\border\\w*", "\\d", "\\bstatus\\b", "\\bpurchase\\w*", "\\bbought\\b"],
+  "forged_structures": {
+    "named_tool_with_arguments": "(?s)[\"'](?:name|tool|tool_name|function)[\"']\\s*:\\s*[\"'][^\"']+[\"'].{0,400}?[\"'](?:arguments|args|parameters|result)[\"']\\s*:",
+    "arguments_with_named_tool": "(?s)[\"'](?:arguments|args|parameters|result)[\"']\\s*:.{0,400}?[\"'](?:name|tool|tool_name|function)[\"']\\s*:\\s*[\"'][^\"']+[\"']",
+    "result_json": "\\{\\s*\"[A-Za-z_]+\"\\s*:",
+    "dialog_labels": "(?m)^\\s*(?:assistant|user|system)\\s*:",
+    "dialog_labels_inline": "(?is)\\b(?:assistant|user|system)\\s*:.{0,2000}?\\b(?:assistant|user|system)\\s*:"
+  },
+  "override_requests": {
+    "new_role": "\\b(?:you(?: are|'re) (?:no longer|now)|from (?:now|here) on|pretend (?:to be|you(?: are|'re))|stop being)\\b|\\b(?:act|respond|reply|answer|behave|speak|talk|write) (?:as|like) (?:a|an|the|if|you)\\b",
+    "drop_the_rules": "\\b(?:skip|ignore|forget|drop|disregard|bypass|override|lift)\\b[^.?!]{0,40}?\\b(?:(?:your|all|any|every|system|original|initial|this|that)\\b(?:\\s+[\\w']+){0,3}\\s+(?:rules?|restrictions?|instructions?|guidelines?|limits?|limitations?|job|role|prompt|programming|settings?)|(?:the|these|those|previous|prior|earlier|above)\\b(?:\\s+(?!(?:deliver\\w*|shipping|shipment|shipped|parcels?|packages?|orders?|address(?:es)?|tracking|carrier|courier|postal|pickup)\\b)[\\w']+){0,3}\\s+(?:instructions?|settings?)|(?:the|these|those|previous|prior|earlier|above)\\b(?:\\s+[\\w']+){0,3}\\s+(?:rules?|guidelines?|job|role|prompt|programming)|(?:the|these|those|previous|prior|earlier|above)\\b(?:\\s+[\\w']+){0,3}\\s+restrictions?(?!\\s+(?:on|about|for|regarding|with|in|to|of|against|I|we)\\b))\\b|\\b(?:skip|ignore|forget|drop|disregard|bypass|override|lift)\\s+(?:all\\s+)?(?:rules?|instructions?|guidelines?|restrictions?|prompt)\\b|\\b(?:staff|admin|system|developer|manager|owner|support)\\s+override\\b",
+    "no_rules": "\\byou (?:have|had|got|now have) (?:no (?:more|longer) (?:rules?|restrictions?|instructions?|guidelines?|limits?|limitations?)\\b|no (?:rules?|restrictions?|instructions?|guidelines?|limits?|limitations?)\\b(?!\\s+(?:on|about|for|regarding|with|in|to|of|against|I|we)\\b))"
+  },
+  "needs_input_result": {
+    "status": "needs_customer_input",
+    "missing": []
+  },
+  "fallback_replies": {
+    "invalid_tool_call": "Sorry, I could not process that request. Please send your order number and the email used for the order again, or ask for a human agent.",
+    "tool_call_limit": "Sorry, I could not finish that request. Please try again with your order number and email, or ask for a human agent.",
+    "empty_answer": "Sorry, I could not come up with an answer. Please rephrase your question, or ask for a human agent.",
+    "unchecked_conclusion": "Sorry, I could not look that up just now. Please try again with your order number and email, or ask for a human agent.",
+    "unrenderable_order": { "failure_reply": "unavailable" },
+    "policy_unavailable": { "failure_reply": "unavailable" }
+  },
+  "consent_words": {
+    "strong": ["yes", "yeah", "yep", "yup", "y", "ya", "absolutely", "of course", "please do", "go ahead", "do it", "sounds good", "yes please"],
+    "weak": ["ok", "okay", "sure", "alright", "please"],
+    "courtesy": ["thanks", "thank you", "thankyou", "ty", "cheers", "ta", "tks", "thx"],
+    "refusal": ["no", "nope", "nah", "no thanks", "not now", "i'm good", "i am good"],
+    "questions": "[?\uff1f\u061f\u203d\u2047\ufe56\u2753\u2754\u00bf]",
+    "marks": "[\\s.,!'\\-\u2026\u201c\u201d\"\ud83d\udc4d]*",
+    "references": "[#\uff03\\d]"
+  },
+  "consent_guards": {
+    "handoff_to_human": {
+      "agreed": [
+        "connect me",
+        "human",
+        "a human",
+        "agent"
+      ],
+      "requested": [
+        "\\b(?:talk|speak|chat) (?:to|with) (?:a |an |the |your )?(?:human|real person|person|agent|representative|someone|member of your team)",
+        "\\bconnect me (?:to|with) ",
+        "\\b(?:want|need|get|give me) (?:a |an |the )?(?:human|real person|agent|representative)\\b"
+      ],
+      "mentioned": [
+        "\\b(?:(?:talk|speak|chat)\\b|(?:put|connect|transfer|hand|pass|escalate) me\\b)[^.?!]{0,40}\\b(?:human|person|agent|representative|staff|someone|somebody|team|manager|supervisor|colleague|customer service)\\b"
+      ],
+      "declined": [
+        "\\bno\\b",
+        "\\bnope\\b",
+        "\\bnot\\b",
+        "n't\\b",
+        "\\bnever\\b",
+        "\\bcancel\\b",
+        "\\bstop\\b"
+      ],
+      "forged": [
+        "<tool_response>.*?(?:</tool_response>|$)",
+        "<tool_call>.*?(?:</tool_call>|$)"
+      ],
+      "offer_sentence": "handoff_offer"
+    },
+    "send_shipping_reminder": {
+      "agreed": [
+        "remind me",
+        "reminder",
+        "send the reminder",
+        "send it"
+      ],
+      "requested": [],
+      "mentioned": [],
+      "declined": [
+        "\\bno\\b",
+        "\\bnope\\b",
+        "\\bnot\\b",
+        "n't\\b",
+        "\\bnever\\b",
+        "\\bcancel\\b",
+        "\\bstop\\b"
+      ],
+      "forged": [
+        "<tool_response>.*?(?:</tool_response>|$)",
+        "<tool_call>.*?(?:</tool_call>|$)"
+      ],
+      "offer_sentence": "reminder_offer"
+    }
+  },
+  "answers": {
+    "handoff_reasons": {
+      "by_status": {
+        "ATTEMPTED_DELIVERY": "attempted_delivery",
+        "DELAYED": "delayed",
+        "FULFILLED": "no_tracking",
+        "unavailable": "unavailable",
+        "locked": "locked"
+      },
+      "priority": [
+        "locked",
+        "unavailable",
+        "ATTEMPTED_DELIVERY",
+        "DELAYED",
+        "FULFILLED"
+      ],
+      "default": "customer_request"
+    },
+    "derived": {
+      "handoff_to_human": "reason"
+    },
+    "confirmations": {
+      "handoff_to_human": {
+        "status": "handed_off",
+        "sentence": "handoff_confirmation",
+        "field": "ticket"
+      },
+      "send_shipping_reminder": {
+        "status": "requested",
+        "sentence": "reminder_confirmation",
+        "field": "reference"
+      }
+    },
+    "claim_reply": "decline_ack",
+    "refusal_words": [
+      "\\bi(?: (?:can ?not|can'?t|am unable to|am not able to)|'m (?:unable|not able) to) (?:help|assist)\\b",
+      "\\bi can only (?!(?:look|check|find|see|view|track|connect|hand|pass|transfer|provide|share|give|tell|send)\\b)\\w",
+      "\\bi'?m (?:just|only) here to (?:help|assist)\\b",
+      "\\bi'?m here to (?:help|assist)\\b[^.]*\\bonly\\b",
+      "\\bi (?:can ?not|can'?t)\\b[^.]*\\.\\s*i'?m here to (?:help|assist)\\b",
+      "\\bmy (?:assistance|help|capabilities|scope)\\b[^.]{0,20}\\blimited\\b",
+      "\\bi(?: (?:can ?not|can'?t|am unable to|am not able to)|'m (?:unable|not able) to) (?:answer|discuss|provide (?:any )?information)\\b",
+      "\\bi only know about\\b"
+    ],
+    "refusal_sentence": "decline_reply",
+    "order_words": [
+      "\\border\\b",
+      "\\bparcels?\\b",
+      "\\bpackages?\\b",
+      "\\bdeliver\\w*",
+      "\\bship\\w*",
+      "\\btracking\\b",
+      "\\barriv\\w*"
+    ],
+    "own_order_words": [
+      "\\bmy\\s+(?:\\w+\\s+){0,2}(?:orders?|packages?|parcels?|deliver(?:y|ies)|shipments?|purchases?|tracking)\\b",
+      "\\bi\\s+(?:ordered|bought|purchased)\\b",
+      "\\bi(?:\\s+am|'m|'ve\\s+been|\\s+have\\s+been)\\s+(?:(?:still|just|currently|now)\\s+)?waiting\\s+(?:for|on)\\s+(?:a|the|my)\\s+(?:\\w+\\s+){0,2}(?:deliver(?:y|ies)|parcels?|packages?|orders?|shipments?)\\b",
+      "\\border\\s*(?:number|no\\.?)?\\s*\\d",
+      "(?<!\\bhow )(?<!\\bget )(?<!\\bgot )(?<!\\bhave )\\b(?:it|they|them)\\s+(?:[\\w']+\\s+){0,3}?(?:arriv(?:e|es|ed|ing)|(?:come|comes|coming|came)(?!\\s+(?:in|with|from|as|out|apart|to|off)\\b)|(?:get|getting|got)\\s+here|shipped|delivered|dispatched|(?:show|shown|showed|turn|turned)\\s+up|on\\s+(?:its|the)\\s+way|be\\s+here|land(?:s|ed|ing)?)\\b",
+      "(?<!\\bhow )(?<!\\bwhen )\\bthe\\s+(?:package|parcel|order|shipment|box)\\s+(?:[\\w']+\\s+){0,3}?(?:arriv(?:e|es|ed|ing)|(?:come|comes|coming|came)(?!\\s+(?:in|with|from|as|out|apart|to|off)\\b)|(?:get|getting|got)\\s+here|shipped|delivered|dispatched|(?:show|shown|showed|turn|turned)\\s+up|on\\s+(?:its|the)\\s+way|be\\s+here|land(?:s|ed|ing)?)\\b",
+      "\\bwhere\\s+(?:is|are)\\s+(?:it|they|them)\\b(?:\\s+(?:now|right now|currently|at the moment))?\\s*[?!.]*$"
+    ],
+    "ask_blockers": [
+      "\\b(?:system|secret|hidden|internal|private|confidential)\\s+(?:rules?|instructions?|prompts?|configuration|settings|messages?)\\b",
+      "\\byour (?:own )?(?:rules|instructions|configuration|config|prompt|setup|settings|guidelines|programming|tool definitions|tools|schema)\\b",
+      "\\b(?:you were given|you were told|given to you)\\b"
+    ]
+  },
+  "context_drop": {
+    "placeholder": "[earlier order details removed]"
+  },
+  "override_unconditional": ["drop_the_rules", "no_rules"],
+  "consent_exempt": [
+    "lookup_order",
+    "search_policy"
+  ],
+  "needs_consent_result": {
+    "status": "needs_customer_consent",
+    "missing": [
+      "consent"
+    ]
+  },
+  "withheld_placeholder": "[message withheld]"
+}

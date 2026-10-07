@@ -1,0 +1,39 @@
+{
+  "source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "accessed": "2026-10-05",
+  "default": "sonnet-5-5",
+  "models": [
+    {
+      "id": "sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "short": "Sonnet 5.5",
+      "input": 2.0,
+      "cache_read": 0.2,
+      "min_cacheable": 512
+    },
+    {
+      "id": "opus-5-5",
+      "name": "Claude Opus 5.5",
+      "short": "Opus 5.5",
+      "input": 4.0,
+      "cache_read": 0.2,
+      "min_cacheable": 512
+    },
+    {
+      "id": "haiku-4-5",
+      "name": "Claude Haiku 4.5",
+      "short": "Haiku 4.5",
+      "input": 1.0,
+      "cache_read": 0.1,
+      "min_cacheable": 4096
+    }
+  ],
+  "calculator": {
+    "days_per_month": 30,
+    "default_per_day": 10000,
+    "default_turns": 3,
+    "max_turns": 10,
+    "stops": [100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
+    "chart_stops": [100, 1000, 10000, 100000, 1000000]
+  }
+}

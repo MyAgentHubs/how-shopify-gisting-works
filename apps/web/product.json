@@ -1,0 +1,13 @@
+{
+  "name": "OpenGisting",
+  "slug": "opengisting",
+  "origin": "https://www.myagenthubs.com",
+  "brand": "MyAgentHubs",
+  "ogImage": "/og/og-opengisting-{lang}.png",
+  "languages": [
+    { "code": "en", "htmlLang": "en", "hreflang": "en", "prefix": "", "indexed": true, "copyFallback": null },
+    { "code": "zh-CN", "htmlLang": "zh-CN", "hreflang": "zh-Hans", "prefix": "zh-CN", "indexed": true, "copyFallback": null },
+    { "code": "ja", "htmlLang": "ja", "hreflang": "ja", "prefix": "ja", "indexed": false, "copyFallback": "en" },
+    { "code": "ko", "htmlLang": "ko", "hreflang": "ko", "prefix": "ko", "indexed": false, "copyFallback": "en" }
+  ]
+}

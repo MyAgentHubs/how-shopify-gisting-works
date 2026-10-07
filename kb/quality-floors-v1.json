@@ -1,0 +1,8 @@
+{
+  "holdout": {
+    "min_top1": 7,
+    "min_top3": 14,
+    "min_accepted_top1": 2,
+    "max_false_hits": 2
+  }
+}

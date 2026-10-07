@@ -1,0 +1,158 @@
+{
+  "ask": {
+    "both": "Could you send me your order number{order_number_example} and the email address you used for the order{email_example}?",
+    "email": "Could you send me the email address you used for the order{email_example}?",
+    "order_number": "Could you send me your order number{order_number_example}?"
+  },
+  "ask_examples": {
+    "order_number": "#1234",
+    "email": "name@example.com"
+  },
+  "ask_example_wrapper": " (for example, {value})",
+  "step_examples": [
+    {
+      "customer": "Any news on #1012? My email is sample@example.com.",
+      "call": {
+        "order_number": "#1012",
+        "email": "sample@example.com"
+      }
+    },
+    {
+      "customer": "sample@example.com, where is 1013?",
+      "call": {
+        "order_number": "1013",
+        "email": "sample@example.com"
+      }
+    }
+  ],
+  "fulfillment_status": {
+    "UNFULFILLED": "has not shipped yet",
+    "PARTIALLY_FULFILLED": "has partly shipped",
+    "FULFILLED": "has shipped"
+  },
+  "transport_status": {
+    "FULFILLED": "has shipped",
+    "IN_TRANSIT": "is on its way",
+    "OUT_FOR_DELIVERY": "is out for delivery",
+    "DELAYED": "is delayed",
+    "ATTEMPTED_DELIVERY": "a delivery attempt was unsuccessful",
+    "DELIVERED": "has been delivered"
+  },
+  "sentences": {
+    "no_shipment_details": "I do not have a tracking number or a delivery date yet, but tracking usually appears once the carrier picks up and scans the parcel.",
+    "unshipped_rest": "The rest of your items have not shipped yet, and I do not have a date for them.",
+    "handoff_offer": "Would you like me to connect you with a member of our team?",
+    "reminder_offer": "Would you like me to send our team a reminder to ship your order?",
+    "reminder_confirmation": "Done. I have sent our team a reminder about your order. Your reference number is <reference>.",
+    "handoff_confirmation": "Done. I have passed your request to our team. Your ticket number is <ticket>, and a member of our team will take it from here.",
+    "decline_reply": "Sorry, I can only help with order and delivery questions at Gisting Lab Store.",
+    "decline_ack": "No problem. Let me know if there is anything else I can help with.",
+    "happy_to_help": "Happy to help!",
+    "thanks_patience": "Thanks for your patience!"
+  },
+  "empathy": [
+    "happy_to_help",
+    "thanks_patience"
+  ],
+  "reply_by_status": {
+    "transport_status": {
+      "FULFILLED": "Your order {words}. {no_shipment_details} {handoff_offer}",
+      "IN_TRANSIT": "Your order {words}. It is with <carrier>, tracking number <tracking number>. Expected delivery: <month name and day, like March 9>.",
+      "OUT_FOR_DELIVERY": "Your order {words}. It is with <carrier>, tracking number <tracking number>. Expected delivery: <month name and day, like March 9>.",
+      "DELAYED": "Your order {words}. It is with <carrier>, tracking number <tracking number>. Expected delivery: <month name and day, like March 9>. {thanks_patience} {handoff_offer}",
+      "ATTEMPTED_DELIVERY": "Sorry, {words}. It is with <carrier>, tracking number <tracking number>. Expected delivery: <month name and day, like March 9>. {handoff_offer}",
+      "DELIVERED": "Your order {words}. It was sent with <carrier>, tracking number <tracking number>. Delivered on <month name and day, like March 9>."
+    },
+    "fulfillment_status": {
+      "UNFULFILLED": "Your order {words}, so I do not have a delivery date. {reminder_offer}",
+      "PARTIALLY_FULFILLED": "Your order {words}."
+    }
+  },
+  "failure_replies": {
+    "no_match": "I couldn't find an order matching that order number and email. Please check both and try again.",
+    "unavailable": "Sorry, order lookup is not available right now. Please try again in a little while. {handoff_offer}",
+    "locked": "Order lookups are locked for this chat after too many unsuccessful attempts. {handoff_offer}"
+  },
+  "parcel_forms": {
+    "several": {
+      "subject": "{ordinal} parcel",
+      "for_it": " for it",
+      "delivered_on": "{ordinal} parcel was delivered on {value}."
+    },
+    "one": {
+      "subject": "Your order",
+      "for_it": "",
+      "delivered_on": "Your order was delivered on {value}."
+    }
+  },
+  "parcel_status": {
+    "IN_TRANSIT": "is on its way",
+    "OUT_FOR_DELIVERY": "is out for delivery",
+    "DELAYED": "is delayed",
+    "ATTEMPTED_DELIVERY": "had an unsuccessful delivery attempt",
+    "DELIVERED": "has been delivered",
+    "FULFILLED": "has shipped"
+  },
+  "parcel_facts": {
+    "shipped": {
+      "carrier": "it is with {value}",
+      "tracking": "tracking number {value}",
+      "date": "expected delivery {value}"
+    },
+    "delivered": {
+      "carrier": "it was sent with {value}",
+      "tracking": "tracking number {value}",
+      "date": "delivered on {value}"
+    }
+  },
+  "parcel_missing": {
+    "date": "but I do not have a delivery date{for_it} yet",
+    "tracking": "but I do not have a tracking number{for_it} yet",
+    "both": "but I do not have a tracking number or a delivery date{for_it} yet"
+  },
+  "parcel_closing": {
+    "order": [
+      "thanks_patience",
+      "unshipped_rest",
+      "handoff_offer"
+    ],
+    "when": {
+      "DELAYED": [
+        "thanks_patience",
+        "handoff_offer"
+      ],
+      "ATTEMPTED_DELIVERY": [
+        "handoff_offer"
+      ],
+      "PARTIALLY_FULFILLED": [
+        "unshipped_rest"
+      ]
+    },
+    "also_without_tracking": {
+      "FULFILLED": [
+        "handoff_offer"
+      ]
+    }
+  },
+  "many_parcels_reply": "Your order was sent in several parcels, so the details are too long to list here. {handoff_offer}",
+  "limits": {
+    "max_sentences": 4,
+    "max_sentences_by_line": {
+      "DELAYED": 5,
+      "ATTEMPTED_DELIVERY": 5,
+      "PARTIALLY_FULFILLED": 5
+    },
+    "several_parcels_from": 2,
+    "several_parcels_from_by_line": {
+      "PARTIALLY_FULFILLED": 1
+    },
+    "max_parcels": 3
+  },
+  "ordinals": [
+    "First",
+    "Second",
+    "Third",
+    "Fourth",
+    "Fifth"
+  ]
+}

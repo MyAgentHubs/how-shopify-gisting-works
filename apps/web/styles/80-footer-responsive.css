@@ -1,0 +1,8 @@
+.og-ftr{max-width:1080px;margin:0 auto;padding:0 32px 56px;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;font-size:13px;line-height:1.5;color:var(--ink-2)}
+.og-ftr a{display:inline-flex;align-items:center;min-height:44px}
+.og-ftr .mh-footer-brand{color:var(--ink-2)}
+.og-ftr .og-disc{flex:1 0 100%;margin:4px 0 0;font-size:13px;color:var(--ink-2)}
+.og-nochat{margin:0 0 16px;padding:12px 14px;border:1px dashed var(--ink-3);border-radius:12px;background:var(--bg-sunken);font-size:13px;line-height:1.5;color:var(--ink)}
+@media (max-width:820px){
+  .og-ftr{padding:0 20px 40px}
+}

@@ -1,0 +1,22 @@
+{
+  "decision": "docs/decisions/0009-launch-with-orders-and-delivery-only.md",
+  "rules_sha256": "65f9a4bf58d03aef88fb884f3eb9c6aa79551d2ca7394c92bd440f90da531a45",
+  "reply_phrases_sha256": "59d21af7333c45f61b4dae666bc972db32306d761f2d954fb734695a4c78e7d0",
+  "tool_files_sha256": {
+    "handoff_to_human.json": "5fef2a44d86d08b9193a56c6e498792d1ba679ca3c99f42271ccbef94420c386",
+    "lookup_order.json": "6b025732e49e3f7285b1391814babee75509ab08be895e1bff07c1013e7e9308",
+    "send_shipping_reminder.json": "4816403cb2ccbc4dc52f655024e91132764c02613e5a409ca379b30fd0881184"
+  },
+  "tools_segment_files_sha256": {
+    "chat_variants.json": "7ccffdbc72e87762f43a24abcd6d8e71292c2597c3159b87e1e0772150f34972",
+    "qwen3_tools_postamble.txt": "8ff673fcd06c06a92cc8560eba9e4a17369cab6b48eaebd2ef4e4e70ea423a1f",
+    "qwen3_tools_preamble.txt": "882960e4e368f73936cfd8aa6ac5f92ca154b6ce94632bf3645b9745e41554b2"
+  },
+  "artifact": {
+    "path": "artifacts/gist/k16-v8-2026-10-03/k16-v8-seed20261002",
+    "run_id": "k16-v8-seed20261002",
+    "rules_sha256": "65f9a4bf58d03aef88fb884f3eb9c6aa79551d2ca7394c92bd440f90da531a45",
+    "tools_sha256": "1a19f792d4a935f4485e8b597d6efca0edbcd7ecfa0be515deba34b35e697d74",
+    "gist_sha256": "a41e307cfe017300261c6e628d749bbf64922e6a0e34e880a5b6de8f5f3063a9"
+  }
+}

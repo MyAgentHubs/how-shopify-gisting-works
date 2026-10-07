@@ -1,0 +1,19 @@
+{
+  "name": "lookup_order",
+  "description": "Look up the shipping status of one Gisting Lab Store order. Call it only after the customer has written both the order number and the email address in this chat.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "order_number": {
+        "type": "string",
+        "description": "The order number the customer wrote, for example #1042."
+      },
+      "email": {
+        "type": "string",
+        "description": "The email address the customer wrote for this order. Never invent one: if the customer has not written an email, ask for it instead of calling the tool."
+      }
+    },
+    "required": ["order_number", "email"],
+    "additionalProperties": false
+  }
+}

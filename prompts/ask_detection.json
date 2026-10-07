@@ -1,0 +1,20 @@
+{
+  "items": {
+    "order_number": [
+      "\\border (?:number|id|no|name)\\b|\\border #"
+    ],
+    "email": [
+      "\\be-?mail\\b"
+    ]
+  },
+  "request": [
+    "\\b(?:could|can|would|will|may) you(?: please)?\\b",
+    "\\bplease (?:send|share|provide|give|tell|confirm|enter|type|include|reply)\\b",
+    "\\b(?:i|i'll|i will|i'd|i would)(?: also| first)? need\\b",
+    "\\bwhat(?:'s| is| was) (?:the|your)\\b",
+    "\\b(?:provide|send|share)\\b[^.?!]*\\b(?:these|those|both|them)\\b"
+  ],
+  "conditional": [
+    "\\bwithout\\b"
+  ]
+}

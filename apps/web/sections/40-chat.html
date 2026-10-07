@@ -1,0 +1,44 @@
+{{include:panda-divider}}
+<section class="og-sec og-wrap" id="agent" aria-labelledby="og-t-agent">
+  <p class="og-kicker">4</p>
+  <h2 id="og-t-agent">{{copy:hero.cta_try}}</h2>
+  <noscript><p class="og-nochat">{{copy:chat.noscript}}</p></noscript>
+  <ul class="og-notes">
+    <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg><span>{{copy:chat.note_llm}}</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span>{{copy:hero.language}}</span></li>
+  </ul>
+  <div class="og-ex" role="group" aria-labelledby="og-ex-l" aria-describedby="og-ex-h">
+    <p class="og-exl" id="og-ex-l">{{copy:chat.examples}}</p>
+    <p class="og-exh" id="og-ex-h">{{copy:chat.examples_help}}</p>
+    <div class="og-exb">
+{{each:examples|example-button}}
+    </div>
+  </div>
+  <div class="og-win">
+    <div class="og-wbar"><b>{{copy:ui.chat_title}}</b><span class="og-mode">{{copy:ui.mode_gist}}</span></div>
+    <div class="og-wbody">
+      <div class="og-chat">
+        <div class="og-clog" data-role="log" role="log" aria-live="polite" tabindex="0"></div>
+        <form class="og-composer" data-role="form" autocomplete="off">
+          <label class="og-vh" for="og-msg">{{copy:ui.message_label}}</label>
+          <input id="og-msg" data-role="input" type="text" placeholder="{{copy:ui.placeholder}}">
+          <button class="og-btn-app" type="submit" data-role="send">{{copy:ui.send}}</button>
+        </form>
+        <div class="og-ts" data-role="turnstile"></div>
+      </div>
+      <details class="og-hood" data-role="hood" open>
+        <summary><span>{{copy:hood.header.title}}</span><span class="og-cv" data-role="drawer-summary"></span></summary>
+        <div class="og-hhq"><details class="og-hq"><summary aria-label="{{copy:hood.help}}">?</summary><span class="og-hh">{{copy:hood.header.body}}</span></details></div>
+        <div data-role="panel-body"></div>
+        <div class="og-hs">
+          <p class="og-hhelp">{{copy:hood.compare.body}}</p>
+          <button class="og-btn-app og-sec2" type="button" data-role="compare">{{copy:hood.compare.title}}</button>
+          <span class="og-left" data-role="compare-left"></span>
+          <div class="og-cmpout" data-role="compare-out" hidden></div>
+        </div>
+      </details>
+    </div>
+    <div class="og-meter" data-role="meter" hidden></div>
+  </div>
+  {{include:more-orders}}
+</section>

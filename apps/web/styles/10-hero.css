@@ -1,0 +1,24 @@
+.og-hero{max-width:1080px;margin:0 auto;padding:56px 32px 0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;font-size:15px;line-height:1.6}
+.og-hero .og-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.og-hero h1{font-size:38px;font-weight:750;letter-spacing:-.03em;line-height:1.25;margin:0 0 18px}
+.og-hero .og-lead{font-size:15px;color:var(--ink-2);max-width:56ch;margin:0 0 26px}
+.og-hero .og-lead2{font-size:13px;color:var(--ink-2);margin:-14px 0 24px;max-width:56ch}
+.og-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0}
+.og-cta .og-link{font-size:14px;font-weight:600;padding:0 6px;min-height:44px;display:inline-flex;align-items:center}
+.og-stamps{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.og-stamps li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:12px 14px;border-radius:12px;background:var(--panel);font-size:13px;color:var(--ink-2);line-height:1.45}
+.og-stamps li:nth-child(1){border:1.5px solid var(--green)}
+.og-stamps li:nth-child(2){border:1.5px dashed var(--amber)}
+.og-stamps li:nth-child(3){border:1.5px dotted var(--ink-3);background:var(--bg-sunken)}
+.og-stamps .og-mk{min-width:104px;justify-content:flex-start}
+.og-facts{grid-column:1/-1;display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden;font-size:14px;line-height:1.4}
+.og-facts li{display:flex;align-items:center;padding:12px 18px;border-left:1px solid var(--line);color:var(--ink-2);font-weight:600}
+.og-facts li:first-child{border-left:0}
+.og-facts .og-f1{background:var(--accent-soft);color:var(--ink);font-size:19px;font-weight:750;letter-spacing:-.015em}
+@media (max-width:820px){
+  .og-hero{grid-template-columns:1fr;gap:26px;padding:36px 20px 0}
+  .og-hero h1{font-size:30px}
+  .og-facts{flex-direction:column}
+  .og-facts li{border-left:0;border-top:1px solid var(--line);padding:10px 16px}
+  .og-facts li:first-child{border-top:0}
+}

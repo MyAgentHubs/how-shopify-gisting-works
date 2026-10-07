@@ -1,0 +1,60 @@
+{
+  "orders": [
+    {
+      "id": "in-transit",
+      "label_key": "try.example.in_transit",
+      "order": "#1006",
+      "scenario": "IN_TRANSIT",
+      "email": "qdgxwwrmrp@orders.example.com"
+    },
+    {
+      "id": "partially-fulfilled",
+      "label_key": "try.example.partially_fulfilled",
+      "order": "#1097",
+      "scenario": "PARTIALLY_FULFILLED",
+      "email": "63ffh3c47m@orders.example.com"
+    },
+    {
+      "id": "out-for-delivery",
+      "label_key": "try.example.out_for_delivery",
+      "order": "#1016",
+      "scenario": "OUT_FOR_DELIVERY",
+      "email": "zb7yk5yx5l@orders.example.com"
+    },
+    {
+      "id": "attempted-delivery",
+      "label_key": "try.example.attempted_delivery",
+      "order": "#1021",
+      "scenario": "ATTEMPTED_DELIVERY",
+      "email": "oou4om32yz@orders.example.com"
+    },
+    {
+      "id": "delayed",
+      "label_key": "try.example.delayed",
+      "order": "#1084",
+      "scenario": "DELAYED",
+      "email": "dqerevaz4b@orders.example.com"
+    },
+    {
+      "id": "delivered",
+      "label_key": "try.example.delivered",
+      "order": "#1012",
+      "scenario": "DELIVERED",
+      "email": "vuv656togj@orders.example.com"
+    },
+    {
+      "id": "fulfilled-no-tracking",
+      "label_key": "try.example.fulfilled_no_tracking",
+      "order": "#1005",
+      "scenario": "FULFILLED_NO_TRACKING",
+      "email": "7mhpnw4ap5@orders.example.com"
+    },
+    {
+      "id": "unfulfilled",
+      "label_key": "try.example.unfulfilled",
+      "order": "#1022",
+      "scenario": "UNFULFILLED",
+      "email": "adlmbuiyxt@orders.example.com"
+    }
+  ]
+}

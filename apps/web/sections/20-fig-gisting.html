@@ -1,0 +1,43 @@
+{{include:panda-divider}}
+<section class="og-sec og-wrap" id="gisting" aria-labelledby="og-t-gisting">
+  <p class="og-kicker">2</p>
+  <h2 id="og-t-gisting">{{copy:gisting.title}}</h2>
+  <div class="og-cmp">
+    
+  <div class="og-side">
+      <h3>{{copy:ui.mode_full}}</h3>
+      <div class="og-art" aria-hidden="true"><svg viewBox="0 0 120 170" width="104" height="147" aria-hidden="true" focusable="false"><rect class="og-doc-page" x="2" y="2" width="116" height="166" rx="8"/><rect class="og-doc-line" x="14" y="16" width="86" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="24" width="70" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="32" width="80" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="40" width="60" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="48" width="86" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="56" width="74" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="64" width="40" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="72" width="86" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="80" width="66" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="88" width="80" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="96" width="52" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="104" width="86" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="112" width="72" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="120" width="30" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="128" width="86" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="136" width="78" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="144" width="58" height="3.5" rx="1.75"/><rect class="og-doc-line" x="14" y="152" width="44" height="3.5" rx="1.75"/></svg></div>
+      <p class="og-big">{{data:numbers.rulesFull|int}}<small>{{copy:gisting.unit}}</small></p>
+      <p class="og-sub">{{copy:gisting.left}}</p>
+    </div>
+    
+  <div class="og-mid"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12h16M14 6l6 6-6 6"/></svg><span>{{copy:gisting.arrow}}</span></div>
+    
+  <div class="og-side">
+      <h3>{{copy:ui.mode_gist}}</h3>
+      <div class="og-art" aria-hidden="true"><svg viewBox="0 0 228 90" width="228" height="90" aria-hidden="true" focusable="false"><rect class="og-tile" x="4" y="4" width="22" height="22" rx="6"/><rect class="og-tile" x="32" y="4" width="22" height="22" rx="6"/><rect class="og-tile" x="60" y="4" width="22" height="22" rx="6"/><rect class="og-tile" x="88" y="4" width="22" height="22" rx="6"/><rect class="og-tile" x="116" y="4" width="22" height="22" rx="6"/><rect class="og-tile" x="144" y="4" width="22" height="22" rx="6"/><rect class="og-tile" x="172" y="4" width="22" height="22" rx="6"/><rect class="og-tile" x="200" y="4" width="22" height="22" rx="6"/><rect class="og-tile" x="4" y="32" width="22" height="22" rx="6"/><rect class="og-tile" x="32" y="32" width="22" height="22" rx="6"/><rect class="og-tile" x="60" y="32" width="22" height="22" rx="6"/><rect class="og-tile" x="88" y="32" width="22" height="22" rx="6"/><rect class="og-tile" x="116" y="32" width="22" height="22" rx="6"/><rect class="og-tile" x="144" y="32" width="22" height="22" rx="6"/><rect class="og-tile" x="172" y="32" width="22" height="22" rx="6"/><rect class="og-tile" x="200" y="32" width="22" height="22" rx="6"/><rect class="og-tile-ghost" x="4" y="64" width="22" height="22" rx="6"/><rect class="og-tile-ghost" x="32" y="64" width="22" height="22" rx="6"/><rect class="og-tile-ghost" x="60" y="64" width="22" height="22" rx="6"/></svg></div>
+      <p class="og-big">{{data:numbers.rulesGist|int}}<small>{{copy:gisting.unit}}</small></p>
+      <p class="og-sub">{{copy:gisting.right}}</p>
+    </div>
+  </div>
+  <p class="og-claim">{{copy:gisting.claim}}</p>
+  <figure class="og-card og-comp">
+    <h3>{{copy:gisting.unit_input}} <span class="og-chip"><b>{{data:numbers.fullCall|int}}</b> <i aria-hidden="true">→</i> <b>{{data:numbers.gistCall|int}}</b></span></h3>
+    
+  <div class="og-crow"><b>{{copy:ui.mode_full}}</b><span class="og-cbar" role="img" aria-label="{{copy:ui.mode_full}}: {{data:numbers.rulesFull|int}} + {{data:numbers.toolsTokens|int}} + {{data:numbers.chatTokens|int}} = {{data:numbers.fullCall|int}}"><i class="og-r" style="flex:{{data:numbers.rulesFull|plain}} 1 0%"></i><i class="og-t" style="flex:{{data:numbers.toolsTokens|plain}} 1 0%"></i><i class="og-h" style="flex:{{data:numbers.chatTokens|plain}} 1 0%"></i></span><span class="og-tot">{{data:numbers.fullCall|int}}</span></div>
+    
+  <div class="og-crow"><b>{{copy:ui.mode_gist}}</b><span class="og-cbar" role="img" aria-label="{{copy:ui.mode_gist}}: {{data:numbers.rulesGist|int}} + {{data:numbers.toolsTokens|int}} + {{data:numbers.chatTokens|int}} = {{data:numbers.gistCall|int}}"><i class="og-r" style="flex:{{data:numbers.rulesGist|plain}} 1 0%"></i><i class="og-t" style="flex:{{data:numbers.toolsTokens|plain}} 1 0%"></i><i class="og-h" style="flex:{{data:numbers.chatTokens|plain}} 1 0%"></i><i class="og-g" style="flex:{{data:numbers.savedPerCall|plain}} 1 0%"></i></span><span class="og-tot">{{data:numbers.gistCall|int}}</span></div>
+    
+  <ul class="og-cleg">
+      
+  <li><i class="og-r"></i>{{copy:ui.part_rules}} {{data:numbers.rulesFull|int}} → {{data:numbers.rulesGist|int}}</li>
+      
+  <li><i class="og-t"></i>{{copy:ui.part_tools}} {{data:numbers.toolsTokens|int}}</li>
+      
+  <li><i class="og-h"></i>{{copy:ui.part_history}} {{data:numbers.chatTokens|int}}</li>
+      
+  <li><i class="og-g"></i>{{copy:gisting.ghost}}: {{data:numbers.savedPerCall|int}}</li>
+    </ul>
+    <figcaption class="og-figcap">{{copy:gisting.caption}}</figcaption>
+  </figure>
+</section>

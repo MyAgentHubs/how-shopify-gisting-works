@@ -1,0 +1,672 @@
+[
+ {
+  "id": "bad-invented-weekday",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way and should arrive on Wednesday.",
+  "problem": "weekday:wednesday",
+  "date": true
+ },
+ {
+  "id": "bad-invented-tomorrow",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It should arrive tomorrow.",
+  "problem": "relative_time:tomorrow",
+  "date": true
+ },
+ {
+  "id": "bad-invented-date",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. Expected delivery: October 9.",
+  "problem": "date:",
+  "date": true
+ },
+ {
+  "id": "bad-invented-business-days",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It usually takes 3-5 business days.",
+  "problem": "invented_number:3",
+  "date": true
+ },
+ {
+  "id": "bad-invented-business-days-duration",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It usually takes 3-5 business days.",
+  "problem": "duration:3-5 business days",
+  "date": true
+ },
+ {
+  "id": "bad-invented-tracking-number",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your tracking number is TP-1234567890.",
+  "problem": "tracking:TP-1234567890",
+  "date": false
+ },
+ {
+  "id": "bad-invented-carrier",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It is with FedEx.",
+  "problem": "carrier:fedex",
+  "date": false
+ },
+ {
+  "id": "bad-invented-carrier-by-prefix",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order was shipped via Blue Comet.",
+  "problem": "carrier:blue comet",
+  "date": false
+ },
+ {
+  "id": "bad-no-order-delivery-time",
+  "messages": [
+   {
+    "role": "user",
+    "content": "How long does delivery usually take?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Delivery usually takes about 5 days.",
+  "problem": "invented_number:5",
+  "date": true
+ },
+ {
+  "id": "bad-no-order-delivery-duration",
+  "messages": [
+   {
+    "role": "user",
+    "content": "How long does delivery usually take?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Delivery usually takes about 5 days.",
+  "problem": "duration:5 days",
+  "date": true
+ },
+ {
+  "id": "bad-weekday-with-no-lookup",
+  "messages": [
+   {
+    "role": "user",
+    "content": "I ordered on October 1, order #1042, ava.chen@example.com."
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order from Thursday is still processing.",
+  "problem": "weekday:thursday",
+  "date": true
+ },
+ {
+  "id": "bad-clock-time",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "The courier arrives around 3pm.",
+  "problem": "time:03:00",
+  "date": false
+ },
+ {
+  "id": "bad-hours-window",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "It should arrive within 48 hours.",
+  "problem": "duration:48 hours",
+  "date": true
+ },
+ {
+  "id": "bad-old-order-date-after-a-switch",
+  "messages": [
+   {
+    "role": "user",
+    "content": "[earlier order details removed]"
+   },
+   {
+    "role": "user",
+    "content": "Now order #1043, my email is ava.chen@example.com. Which day does it arrive?"
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT",
+    "estimated_delivery": "2026-10-07T10:00:00Z"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. Expected delivery: October 5.",
+  "problem": "date:",
+  "date": true
+ },
+ {
+  "id": "bad-old-tracking-after-a-switch",
+  "messages": [
+   {
+    "role": "user",
+    "content": "[earlier order details removed]"
+   },
+   {
+    "role": "user",
+    "content": "Now order #1043, my email is ava.chen@example.com. Which day does it arrive?"
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT",
+    "tracking_number": "TP-7076916824"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is with Test Parcel, tracking number TP-4085457813.",
+  "problem": "tracking:TP-4085457813",
+  "date": false
+ },
+ {
+  "id": "bad-next-week",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your parcel will arrive next week.",
+  "problem": "relative_time:next week",
+  "date": true
+ },
+ {
+  "id": "bad-retry-weekday",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "ATTEMPTED_DELIVERY"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "A delivery attempt was unsuccessful. They will try again on Monday.",
+  "problem": "weekday:monday",
+  "date": true
+ },
+ {
+  "id": "bad-invented-month",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "UNFULFILLED"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order ships in November.",
+  "problem": "month:november",
+  "date": true
+ },
+ {
+  "id": "bad-misquotes-the-customers-date",
+  "messages": [
+   {
+    "role": "user",
+    "content": "I placed order #1042 on October 1 with ava.chen@example.com. When will it get here?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "You placed your order on October 3, so it should be here soon.",
+  "problem": "date:",
+  "date": true
+ },
+ {
+  "id": "bad-tracking-for-an-order-without-one",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "FULFILLED_NO_TRACKING"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order has shipped with tracking number TP-9999999999.",
+  "problem": "tracking:TP-9999999999",
+  "date": false
+ },
+ {
+  "id": "bad-spelled-out-days",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "It will take two days.",
+  "problem": "number_word:two",
+  "date": true
+ },
+ {
+  "id": "bad-invented-today",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Will it come soon?"
+   }
+  ],
+  "results": [],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Yes, today is the day.",
+  "problem": "relative_time:today",
+  "date": true
+ },
+ {
+  "id": "w5-policy-after-lookup-invented-number",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   },
+   {
+    "raw": {
+     "status": "policy_found",
+     "hits": [
+      {
+       "id": "KB1",
+       "category": "returns",
+       "title": "Return window",
+       "answer": "Unopened items can be returned within 14 days. Refunds are issued within 5 business days."
+      }
+     ]
+    }
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 5. Refunds take 30 days.",
+  "problem": "invented_number:30",
+  "date": true
+ },
+ {
+  "id": "w5-policy-after-lookup-invented-date",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   },
+   {
+    "raw": {
+     "status": "policy_found",
+     "hits": [
+      {
+       "id": "KB1",
+       "category": "returns",
+       "title": "Return window",
+       "answer": "Unopened items can be returned within 14 days. Refunds are issued within 5 business days."
+      }
+     ]
+    }
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 9.",
+  "problem": "date:",
+  "date": true
+ },
+ {
+  "id": "w5-policy-after-lookup-invented-duration",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   },
+   {
+    "raw": {
+     "status": "policy_found",
+     "hits": [
+      {
+       "id": "KB1",
+       "category": "returns",
+       "title": "Return window",
+       "answer": "Unopened items can be returned within 14 days. Refunds are issued within 5 business days."
+      }
+     ]
+    }
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way. It is with Test Parcel, tracking number TP-5257262993. Expected delivery: October 5. Refunds take 30 days.",
+  "problem": "duration:30 days",
+  "date": true
+ },
+ {
+  "id": "f4-earlier-turn-policy-weekday",
+  "messages": [
+   {
+    "role": "user",
+    "content": "How long does processing take?"
+   },
+   {
+    "role": "tool",
+    "content": "{\"status\": \"policy_found\", \"hits\": [{\"id\": \"kb-ship-processing\", \"category\": \"shipping\", \"title\": \"Order processing time\", \"answer\": \"Orders are processed within 1 to 2 business days after payment. Business days are Monday to Friday, excluding public holidays.\"}]}"
+   },
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way and should arrive on Monday.",
+  "problem": "weekday:monday",
+  "date": true
+ },
+ {
+  "id": "f4-earlier-turn-policy-clock",
+  "messages": [
+   {
+    "role": "user",
+    "content": "When can I reach your team?"
+   },
+   {
+    "role": "tool",
+    "content": "{\"status\": \"policy_found\", \"hits\": [{\"id\": \"kb-contact-hours\", \"category\": \"contact\", \"title\": \"Team hours\", \"answer\": \"Our team is available Monday to Friday, 9 am to 5 pm Eastern Time.\"}]}"
+   },
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way and should arrive around 5pm.",
+  "problem": "time:",
+  "date": false
+ },
+ {
+  "id": "f4-earlier-turn-policy-duration",
+  "messages": [
+   {
+    "role": "user",
+    "content": "How long does standard shipping take?"
+   },
+   {
+    "role": "tool",
+    "content": "{\"status\": \"policy_found\", \"hits\": [{\"id\": \"kb-ship-standard\", \"category\": \"shipping\", \"title\": \"Standard shipping time\", \"answer\": \"Standard shipping within the United States takes 3 to 7 business days after your order ships.\"}]}"
+   },
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way and should arrive in 3 to 7 business days.",
+  "problem": "duration:3 to 7 business days",
+  "date": true
+ },
+ {
+  "id": "f4-earlier-turn-policy-hours",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Why has tracking not moved?"
+   },
+   {
+    "role": "tool",
+    "content": "{\"status\": \"policy_found\", \"hits\": [{\"id\": \"kb-tracking-no-movement\", \"category\": \"tracking\", \"title\": \"Tracking shows no movement\", \"answer\": \"After the first scan, tracking can take up to 48 hours to show new movement.\"}]}"
+   },
+   {
+    "role": "user",
+    "content": "Where is order #1042? My email is ava.chen@example.com."
+   }
+  ],
+  "results": [
+   {
+    "found": "IN_TRANSIT"
+   }
+  ],
+  "layers": [
+   "raw",
+   "final"
+  ],
+  "output": "Your order is on its way and should arrive within 48 hours.",
+  "problem": "duration:48 hours",
+  "date": true
+ }
+]

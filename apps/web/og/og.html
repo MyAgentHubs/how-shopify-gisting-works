@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OpenGisting og image</title>
+<style>
+:root{--bg:#F5F2EC;--panel:#FFFEFB;--ink:#1A1814;--ink-2:#4A463E;--line:#E5DDC9;--accent:#D97757;--accent-dk:#A25941;--accent-soft:#F3DDD0}
+*{box-sizing:border-box;margin:0}
+html,body{width:1200px;height:630px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Hiragino Sans","Apple SD Gothic Neo","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased}
+section{display:none;width:1200px;height:630px;padding:52px 72px 44px;flex-direction:column;border-top:14px solid var(--accent)}
+section:target,:root:not(:has(:target)) #en{display:flex}
+.name{display:flex;align-items:center;gap:16px;font-size:40px;font-weight:750;letter-spacing:-.02em}
+.mark{width:28px;height:28px;border-radius:8px;background:var(--accent)}
+.hook{display:flex;align-items:center;justify-content:space-between;margin-top:18px}
+.big{display:flex;align-items:baseline;gap:22px;color:var(--accent-dk);line-height:1}
+.num{font-size:228px;font-weight:800;letter-spacing:-.05em}
+.unit{font-size:96px;font-weight:750;letter-spacing:-.02em}
+.grid{display:grid;grid-template-columns:repeat(4,48px);gap:12px;padding:20px;background:var(--panel);border:2px solid var(--line);border-radius:18px}
+.grid i{height:48px;border-radius:10px;background:var(--accent)}
+.claim{margin-top:20px;font-size:54px;font-weight:750;letter-spacing:-.025em;line-height:1.15}
+.sub{margin-top:14px;font-size:27px;color:var(--ink-2);line-height:1.35}
+.fine{margin-top:auto;padding-top:14px;border-top:2px solid var(--line);font-size:23px;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<section id="en" lang="en">
+<div class="name"><span class="mark"></span>OpenGisting</div>
+<div class="hook">
+<div class="big"><span class="num">16</span><span class="unit">tokens</span></div>
+<div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="claim">Shopify’s Gisting, reproduced in the open</div>
+<div class="sub">Your entire support rulebook in 16 tokens, on a live order-tracking agent.</div>
+<div class="fine">Independent reproduction · Not affiliated with Shopify</div>
+</section>
+<section id="zh-CN" lang="zh-CN">
+<div class="name"><span class="mark"></span>OpenGisting</div>
+<div class="hook">
+<div class="big"><span class="num">16</span><span class="unit">个 token</span></div>
+<div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="claim">开源复现 Shopify 的 Gisting</div>
+<div class="sub">整本客服规则手册，只用 16 个 token，跑在一个真实的订单查询 agent 上。</div>
+<div class="fine">对 Shopify Engineering 的 Gisting 方法的独立复现，与 Shopify 无关联。</div>
+</section>
+</body>
+</html>

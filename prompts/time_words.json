@@ -1,0 +1,48 @@
+{
+  "months": [
+    "jan(?:uary)?",
+    "feb(?:ruary)?",
+    "mar(?:ch)?",
+    "apr(?:il)?",
+    "may",
+    "june?",
+    "july?",
+    "aug(?:ust)?",
+    "sept?(?:ember)?",
+    "oct(?:ober)?",
+    "nov(?:ember)?",
+    "dec(?:ember)?"
+  ],
+  "weekdays": [
+    "mondays?",
+    "tues(?:days?)?",
+    "wednesdays?",
+    "thurs(?:days?)?",
+    "fridays?",
+    "saturdays?",
+    "sundays?"
+  ],
+  "month_day": [
+    "(?<![\\w])(?P<month><months>)\\.?\\s+(?P<day>\\d{1,2})(?:st|nd|rd|th)?(?!\\d)",
+    "(?<![\\w])(?P<day>\\d{1,2})(?:st|nd|rd|th)?\\s+(?:of\\s+)?(?P<month><months>)(?![\\w])"
+  ],
+  "weekday": "(?<![\\w])(?:<weekdays>)(?![\\w])",
+  "relative": [
+    "(?<![\\w])(?:today|tomorrow|yesterday|tonight|overnight)(?![\\w])",
+    "(?<![\\w])(?:this|next|last) (?:morning|afternoon|evening|week|weekend|month|business day|day)(?![\\w])",
+    "(?<![\\w])(?:by )?(?:the )?end of (?:the )?(?:day|week|month)(?![\\w])",
+    "(?<![\\w])(?:in|within) an? (?:business |working )?(?:day|week|hour|month)(?![\\w])",
+    "(?<![\\w])(?:a few|a couple of|several|few) (?:business |working )?(?:days|weeks|hours)(?![\\w])",
+    "(?<![\\w])(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)(?:\\s*(?:-|to)\\s*(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve))?\\s+(?:business |working |calendar )?(?:days?|weeks?|hours?|months?)(?![\\w])"
+  ],
+  "question": "(?:^|(?<=[.!?,]\\s)|(?<=\\n))(?:how|what|when|where|why|which|who|can|could|would|will|do|does|did|is|are|may|should|shall|have|has|anything)(?![\\w])[^.!?]*\\?",
+  "number": "(?<![\\d.,])\\d{3,}(?![\\d])",
+  "amount_value": "\\d{1,3}(?:,\\d{3})+(?:\\.\\d+)?|\\d+(?:\\.\\d+)?",
+  "amount": [
+    "(?:[$€£¥]|(?<![\\w])(?:usd|eur|gbp|cad|aud|jpy|cny)(?![\\w]))\\s?(?P<value><amount>)",
+    "(?<![\\w.,])(?P<value><amount>)\\s?(?:usd|eur|gbp|cad|aud|jpy|cny|dollars?|euros?|pounds?)(?![\\w])",
+    "(?<![\\w.,])(?P<value>\\d+\\.\\d+)(?!\\d|\\.\\d)",
+    "(?<![\\w.,])(?P<value><amount>)\\s?(?:%|percent(?![\\w]))"
+  ],
+  "iso_date": "(?<!\\d)(?P<year>\\d{4})-(?P<month>\\d{2})-(?P<day>\\d{2})(?!\\d)"
+}

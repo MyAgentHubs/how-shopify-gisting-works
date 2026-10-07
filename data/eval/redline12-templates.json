@@ -1,0 +1,936 @@
+{
+  "version": 1,
+  "seed": 20261006,
+  "red_line": 1,
+  "plan": "shipment-plan-v1.json",
+  "families": {
+    "in_transit_status_ask": {
+      "split": "train",
+      "category": "status_lookup",
+      "scenario": "in_transit",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Is it still moving along?"}],
+        [{"role": "user", "content": "Order {order_a} with {email_a}, please. Did it leave the warehouse yet?"}],
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Where is it right now?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). What is the status?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. When should it get here?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Which day will it arrive?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you give me the exact delivery date?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. Is it going to be here tomorrow?"}]
+      ]
+    },
+    "in_transit_arrival_ask": {
+      "split": "dev",
+      "category": "status_lookup",
+      "scenario": "in_transit",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. Has it passed through any hub yet?"}],
+        [{"role": "user", "content": "Following up on {order_a} that I placed with {email_a}. Is it on a truck now?"}],
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. What's going on with the shipment?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. Could you let me know where the parcel is at the moment?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. On what date am I getting it?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. What day of the week will the package land?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Any idea how soon it will reach me?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Should I expect the delivery before Friday?"}]
+      ]
+    },
+    "out_for_delivery_status_ask": {
+      "split": "train",
+      "category": "status_lookup",
+      "scenario": "out_for_delivery",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["OUT_FOR_DELIVERY"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Order {order_a} with {email_a}, please. Is the driver nearby right now?"}],
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. It says out for delivery, so when does it actually arrive?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Will it come today?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. How many more days until it arrives?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} What weekday should I expect it?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. What is the tracking number?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. Which courier has it?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it been delivered yet?"}]
+      ]
+    },
+    "out_for_delivery_arrival_ask": {
+      "split": "dev",
+      "category": "status_lookup",
+      "scenario": "out_for_delivery",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["OUT_FOR_DELIVERY"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Following up on {order_a} that I placed with {email_a}. Should I be home this morning for it?"}],
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. How soon will the driver be here?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. Is the parcel here by tomorrow, do you think?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Has the courier dropped it off?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. Who is delivering it, and what is the tracking code?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Please tell me the expected arrival date."}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. How many days are left before it shows up?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is today the day it comes?"}]
+      ]
+    },
+    "delayed_status_ask": {
+      "split": "train",
+      "category": "status_lookup",
+      "scenario": "delayed",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["DELAYED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. I heard it's delayed. When will it arrive now?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Why is it late and what is the new date?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Any update for me?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Do you know what time it will be delivered?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Is it on schedule?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. Roughly how long will it take now?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Will it make it by the weekend?"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. Can you confirm the carrier and the tracking number?"}]
+      ]
+    },
+    "delayed_arrival_ask": {
+      "split": "dev",
+      "category": "status_lookup",
+      "scenario": "delayed",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["DELAYED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. It's overdue, so what's the revised arrival?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. Is the delay going to last long?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Will somebody be at my door this afternoon?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. Anything new on this one?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Is it running late?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Could you read me the tracking number?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Tell me the delivery company and the tracking code."}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). Is it moving, or stuck somewhere?"}]
+      ]
+    },
+    "attempted_delivery_status_ask": {
+      "split": "train",
+      "category": "status_lookup",
+      "scenario": "attempted_delivery",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["ATTEMPTED_DELIVERY"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Someone said they tried to deliver. When is the next attempt?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. I wasn't home, can they come again?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Is there a delivery estimate?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Where's my stuff?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. Where is it right now?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. What is the status?"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. When should it get here?"}],
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Which day will it arrive?"}]
+      ]
+    },
+    "attempted_delivery_arrival_ask": {
+      "split": "dev",
+      "category": "status_lookup",
+      "scenario": "attempted_delivery",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["ATTEMPTED_DELIVERY"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. The courier missed me. What day will they return?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. A delivery attempt failed, what now?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. I need to know the arrival day to plan my week."}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Do you have an estimated arrival?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. What's going on with the shipment?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Could you let me know where the parcel is at the moment?"}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). On what date am I getting it?"}],
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. What day of the week will the package land?"}]
+      ]
+    },
+    "delivered_status_ask": {
+      "split": "train",
+      "category": "status_lookup",
+      "scenario": "delivered",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["DELIVERED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. It says delivered but nothing is here. When was it dropped off?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} At what time was it delivered?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you give me the exact delivery date?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. Is it going to be here tomorrow?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Will it come today?"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. How many more days until it arrives?"}],
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. What weekday should I expect it?"}],
+        [{"role": "user", "content": "Order {order_a} with {email_a}, please. What is the tracking number?"}]
+      ]
+    },
+    "delivered_arrival_ask": {
+      "split": "dev",
+      "category": "status_lookup",
+      "scenario": "delivered",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["DELIVERED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. The tracker shows delivered, but where was it left?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. On what day was it delivered?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Any idea how soon it will reach me?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Should I expect the delivery before Friday?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is the parcel here by tomorrow, do you think?"}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). Has the courier dropped it off?"}],
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. Who is delivering it, and what is the tracking code?"}],
+        [{"role": "user", "content": "Following up on {order_a} that I placed with {email_a}. Please tell me the expected arrival date."}]
+      ]
+    },
+    "fulfilled_no_tracking_status_ask": {
+      "split": "train",
+      "category": "status_lookup",
+      "scenario": "fulfilled_no_tracking",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["FULFILLED_NO_TRACKING"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} It's marked as fulfilled but I have no tracking number. What is it?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. When does the tracking start working?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. Which courier has it?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it been delivered yet?"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. Any update for me?"}],
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Do you know what time it will be delivered?"}],
+        [{"role": "user", "content": "Order {order_a} with {email_a}, please. Is it on schedule?"}],
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Roughly how long will it take now?"}]
+      ]
+    },
+    "fulfilled_no_tracking_arrival_ask": {
+      "split": "dev",
+      "category": "status_lookup",
+      "scenario": "fulfilled_no_tracking",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["FULFILLED_NO_TRACKING"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. I see no tracking info yet. Why not?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Which day will tracking update?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. How many days are left before it shows up?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is today the day it comes?"}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). Will somebody be at my door this afternoon?"}],
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. Anything new on this one?"}],
+        [{"role": "user", "content": "Following up on {order_a} that I placed with {email_a}. Is it running late?"}],
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. Could you read me the tracking number?"}]
+      ]
+    },
+    "unfulfilled_status_ask": {
+      "split": "train",
+      "category": "status_lookup",
+      "scenario": "unfulfilled",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["UNFULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Has it even shipped?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. When will you send it?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Will it make it by the weekend?"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. Can you confirm the carrier and the tracking number?"}],
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Is there a delivery estimate?"}],
+        [{"role": "user", "content": "Order {order_a} with {email_a}, please. Where's my stuff?"}],
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Where is it right now?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). What is the status?"}]
+      ]
+    },
+    "unfulfilled_arrival_ask": {
+      "split": "dev",
+      "category": "status_lookup",
+      "scenario": "unfulfilled",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["UNFULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Is my order still being packed?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. When does it leave your warehouse?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Tell me the delivery company and the tracking code."}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). Is it moving, or stuck somewhere?"}],
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. I need to know the arrival day to plan my week."}],
+        [{"role": "user", "content": "Following up on {order_a} that I placed with {email_a}. Do you have an estimated arrival?"}],
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. What's going on with the shipment?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. Could you let me know where the parcel is at the moment?"}]
+      ]
+    },
+    "partially_fulfilled_status_ask": {
+      "split": "train",
+      "category": "status_lookup",
+      "scenario": "partially_fulfilled",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. Only part of my order shipped. When does the rest come?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Why did I get one parcel and not the others?"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. When should it get here?"}],
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Which day will it arrive?"}],
+        [{"role": "user", "content": "Order {order_a} with {email_a}, please. Can you give me the exact delivery date?"}],
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Is it going to be here tomorrow?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Will it come today?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. How many more days until it arrives?"}]
+      ]
+    },
+    "partially_fulfilled_arrival_ask": {
+      "split": "dev",
+      "category": "status_lookup",
+      "scenario": "partially_fulfilled",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Part of the order is missing, when does it ship?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. When will the remaining items arrive?"}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). On what date am I getting it?"}],
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. What day of the week will the package land?"}],
+        [{"role": "user", "content": "Following up on {order_a} that I placed with {email_a}. Any idea how soon it will reach me?"}],
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. Should I expect the delivery before Friday?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. Is the parcel here by tomorrow, do you think?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Has the courier dropped it off?"}]
+      ]
+    },
+    "followup_exact_day": {
+      "split": "train",
+      "category": "follow_up",
+      "scenario": "exact_day",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks. Which exact day will it arrive?"}],
+        [{"role": "user", "content": "Order {order_a} with {email_a}, please. What's the status?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Great, and what date should I expect it?"}],
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Has it shipped?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Okay, can you tell me the precise delivery date?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Where is my parcel?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "So what day is it supposed to get here?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks! On which date will it be at my door?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "And the arrival date is...?"}]
+      ]
+    },
+    "later_exact_day": {
+      "split": "dev",
+      "category": "follow_up",
+      "scenario": "exact_day",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Understood. What is the specific date it should show up?"}],
+        [{"role": "user", "content": "Following up on {order_a} that I placed with {email_a}. Is there an update?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Perfect. Do you have a date for when it lands?"}],
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Appreciate it. Which calendar day is the delivery?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. What does the system say?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Alright, give me the day it's expected, please."}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Cool, so when exactly is it due?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "One more thing: the exact day it will be dropped off?"}]
+      ]
+    },
+    "followup_weekday": {
+      "split": "train",
+      "category": "follow_up",
+      "scenario": "weekday",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Order {order_a} with {email_a}, please. What's the status?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is that going to be a weekday or the weekend?"}],
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Has it shipped?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "What day of the week is that?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Where is my parcel?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Will it come on a Monday, or later in the week?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Which weekday will the courier come?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is it arriving on a weekday?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks. And which day of the week does it show up?"}]
+      ]
+    },
+    "later_weekday": {
+      "split": "dev",
+      "category": "follow_up",
+      "scenario": "weekday",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Following up on {order_a} that I placed with {email_a}. Is there an update?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Which day of the week should I stay home for it?"}],
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "So is it a weekend delivery or during the week?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. What does the system say?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "What weekday is the drop-off?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Do they deliver on Saturdays, and will mine come then?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Tell me the weekday it's scheduled for."}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is it coming on a Friday by any chance?"}]
+      ]
+    },
+    "followup_days_left": {
+      "split": "train",
+      "category": "follow_up",
+      "scenario": "days_left",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Has it shipped?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "How many more days until it gets here?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Where is my parcel?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "How many days do I still have to wait?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks. So how long, in days, until it arrives?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "About how many days left?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is it two days or more like a week?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "How much longer will I be waiting?"}]
+      ]
+    },
+    "later_days_left": {
+      "split": "dev",
+      "category": "follow_up",
+      "scenario": "days_left",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "How many days away is the delivery?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. What does the system say?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "And the remaining wait is how many days?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is it a matter of days or weeks?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Roughly how many days should I count on?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Can you say how many business days are left?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is it less than three days?"}]
+      ]
+    },
+    "followup_tomorrow": {
+      "split": "train",
+      "category": "follow_up",
+      "scenario": "tomorrow",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Where is my parcel?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Could it arrive tomorrow?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Will I get it tomorrow?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks. Is delivery happening tomorrow, yes or no?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Can I count on it being here tomorrow?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Any chance it shows up today instead?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it shipped?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is it coming today or tomorrow?"}]
+      ]
+    },
+    "later_tomorrow": {
+      "split": "dev",
+      "category": "follow_up",
+      "scenario": "tomorrow",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. What does the system say?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "So is tomorrow the day?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Do you think it lands tomorrow morning?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Will it be delivered later today?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Would it be fine to plan around tomorrow?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is it still on for tomorrow?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Might it get here tonight?"}]
+      ]
+    },
+    "followup_repeat_tracking": {
+      "split": "train",
+      "category": "follow_up",
+      "scenario": "repeat_tracking",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED", "DELIVERED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Sorry, could you say the tracking number once more?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Can you repeat the tracking number for me?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "I lost the tracking number, what was it?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "What was the tracking code again?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it shipped?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Please send the tracking number one more time."}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. Where is my parcel?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Remind me of the tracking number?"}]
+      ]
+    },
+    "later_repeat_tracking": {
+      "split": "dev",
+      "category": "follow_up",
+      "scenario": "repeat_tracking",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED", "DELIVERED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "I didn't catch the tracking number, could you restate it?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Can you give me that tracking code again, please?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "What number should I put into the tracker?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Mind repeating the tracking details?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Tracking number once more, if you don't mind."}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). What does the system say?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "I need the tracking id again to share it with my family."}]
+      ]
+    },
+    "followup_which_carrier": {
+      "split": "train",
+      "category": "follow_up",
+      "scenario": "which_carrier",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED", "DELIVERED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Which carrier is bringing it?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Who is the courier on this one?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "What shipping company has my package?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it shipped?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Which delivery company handles it?"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. Where is my parcel?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks, and the name of the carrier?"}],
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Could you look it up?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Who is the carrier, and how do I reach them?"}]
+      ]
+    },
+    "later_which_carrier": {
+      "split": "dev",
+      "category": "follow_up",
+      "scenario": "which_carrier",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED", "DELIVERED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "What's the name of the delivery service?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Which company is carrying it to me?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Can you tell me the courier's name?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Who is handling the shipping?"}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). What does the system say?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Is it a local courier or a big company?"}],
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. Please check its progress."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Tell me which carrier has the parcel."}]
+      ]
+    },
+    "no_tracking_followup": {
+      "split": "train",
+      "category": "follow_up",
+      "scenario": "no_tracking",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["FULFILLED_NO_TRACKING"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Where is my parcel?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "Then what's the tracking number?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "Where can I follow the parcel?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "When will the tracking number show up?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "Can you give me a link to track it?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "Which day does it arrive then?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it shipped?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "Who is the carrier on this one?"}]
+      ]
+    },
+    "no_tracking_later": {
+      "split": "dev",
+      "category": "follow_up",
+      "scenario": "no_tracking",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["FULFILLED_NO_TRACKING"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. What does the system say?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "So what number do I track it with?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "How will I know where it is?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "How long until tracking appears?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "Is there any tracking page I can open?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "What date is it due, then?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "Order {order_a} has shipped, but there is no tracking number yet. Is there anything else I can help with?"}, {"role": "user", "content": "Which courier took it?"}]
+      ]
+    },
+    "not_shipped_followup": {
+      "split": "train",
+      "category": "follow_up",
+      "scenario": "not_shipped",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["UNFULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Where is my parcel?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "When will it ship out?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "What day does it leave the warehouse?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "How many days until I receive it?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "Will it arrive this week?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "Can you give me an arrival date anyway?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it shipped?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "Is tomorrow the shipping day?"}]
+      ]
+    },
+    "not_shipped_later": {
+      "split": "dev",
+      "category": "follow_up",
+      "scenario": "not_shipped",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["UNFULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. What does the system say?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "Do you know when it gets sent?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "When can I expect it to be dispatched?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "What's the delivery date once it ships?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "Is it leaving today?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "How long will it take to reach me after dispatch?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "Order {order_a} has not shipped yet. Is there anything else I can help with?"}, {"role": "user", "content": "Which weekday does it go out?"}]
+      ]
+    },
+    "shipping_time_general": {
+      "split": "train",
+      "category": "no_order",
+      "scenario": "shipping_time_general",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "How long does delivery usually take?"}],
+        [{"role": "user", "content": "What's your typical shipping time?"}],
+        [{"role": "user", "content": "How many days does an order take to arrive?"}],
+        [{"role": "user", "content": "Usually how many days until a package gets to me?"}],
+        [{"role": "user", "content": "What is the average delivery time for your store?"}],
+        [{"role": "user", "content": "How fast do you ship?"}],
+        [{"role": "user", "content": "If I order today, how long until I get it?"}]
+      ]
+    },
+    "same_day_hopes": {
+      "split": "train",
+      "category": "no_order",
+      "scenario": "same_day_hopes",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Can I get my package today?"}],
+        [{"role": "user", "content": "Do you offer next day delivery?"}],
+        [{"role": "user", "content": "Is same day delivery possible?"}],
+        [{"role": "user", "content": "Will an order placed now be here tomorrow?"}],
+        [{"role": "user", "content": "Can you deliver by tomorrow morning?"}],
+        [{"role": "user", "content": "Could my parcel be there by tonight?"}],
+        [{"role": "user", "content": "Is overnight shipping something you do?"}]
+      ]
+    },
+    "eta_without_details": {
+      "split": "train",
+      "category": "no_order",
+      "scenario": "eta_without_details",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "I would like to know when my package arrives."}],
+        [{"role": "user", "content": "Where's my parcel and when is it coming?"}],
+        [{"role": "user", "content": "I want to know when my order shows up."}],
+        [{"role": "user", "content": "When do I get my order?"}],
+        [{"role": "user", "content": "What day is my delivery?"}],
+        [{"role": "user", "content": "How long until my stuff is here?"}],
+        [{"role": "user", "content": "Is my package coming today?"}]
+      ]
+    },
+    "weekend_holiday_delivery": {
+      "split": "train",
+      "category": "no_order",
+      "scenario": "weekend_holiday_delivery",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Do you deliver on Sundays?"}],
+        [{"role": "user", "content": "Does the courier work on weekends?"}],
+        [{"role": "user", "content": "Are deliveries made on public holidays?"}],
+        [{"role": "user", "content": "Will shipping be slower around Christmas?"}],
+        [{"role": "user", "content": "Is there any delivery on Saturday?"}],
+        [{"role": "user", "content": "Do orders ship on bank holidays?"}],
+        [{"role": "user", "content": "What happens to delivery times during the holidays?"}]
+      ]
+    },
+    "usual_delivery_speed": {
+      "split": "dev",
+      "category": "no_order",
+      "scenario": "usual_delivery_speed",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "What are your normal delivery times?"}],
+        [{"role": "user", "content": "Could you tell me the standard shipping duration?"}],
+        [{"role": "user", "content": "How long should I plan for shipping?"}],
+        [{"role": "user", "content": "Typically how soon do orders reach customers?"}],
+        [{"role": "user", "content": "How quickly do your parcels get delivered?"}],
+        [{"role": "user", "content": "Is shipping usually quick or slow with you?"}],
+        [{"role": "user", "content": "How many days of waiting should I expect for a new order?"}]
+      ]
+    },
+    "express_delivery_asks": {
+      "split": "dev",
+      "category": "no_order",
+      "scenario": "express_delivery_asks",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Is it possible to receive my order this afternoon?"}],
+        [{"role": "user", "content": "Do you have express delivery for tomorrow?"}],
+        [{"role": "user", "content": "Can an order come the very same day?"}],
+        [{"role": "user", "content": "If I buy right now, will it be at my door by morning?"}],
+        [{"role": "user", "content": "Is there a way to have it arrive tonight?"}],
+        [{"role": "user", "content": "Do parcels from you ever show up the next day?"}],
+        [{"role": "user", "content": "Could I get a delivery before the day ends?"}]
+      ]
+    },
+    "arrival_day_no_order": {
+      "split": "dev",
+      "category": "no_order",
+      "scenario": "arrival_day_no_order",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Could you tell me the delivery date of my purchase?"}],
+        [{"role": "user", "content": "Which day does my parcel come?"}],
+        [{"role": "user", "content": "I am waiting for a delivery, when does it land?"}],
+        [{"role": "user", "content": "Any idea when my shipment gets to me?"}],
+        [{"role": "user", "content": "Tell me when my order will be at the door."}],
+        [{"role": "user", "content": "What's the arrival date for my package?"}],
+        [{"role": "user", "content": "Will my order show up this week?"}]
+      ]
+    },
+    "holiday_season_delivery": {
+      "split": "dev",
+      "category": "no_order",
+      "scenario": "holiday_season_delivery",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Can a parcel arrive on a Sunday?"}],
+        [{"role": "user", "content": "Are weekend deliveries a thing with your carrier?"}],
+        [{"role": "user", "content": "Do you ship on national holidays?"}],
+        [{"role": "user", "content": "Does shipping slow down during Black Friday?"}],
+        [{"role": "user", "content": "Is Saturday delivery available?"}],
+        [{"role": "user", "content": "Do packages get delivered over the holidays?"}],
+        [{"role": "user", "content": "Will the festive season delay deliveries?"}]
+      ]
+    },
+    "own_date_wait": {
+      "split": "train",
+      "category": "customer_date",
+      "scenario": "customer_date",
+      "orders": [{"letter": "a", "email": "matching"}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "I placed order {order_a} on October 1 using {email_a}. When will it get here?"}],
+        [{"role": "user", "content": "Ordered on 9/29, number {order_a}, email {email_a}. How many days should it take?"}],
+        [{"role": "user", "content": "On Sept 27 I bought something, order {order_a} ({email_a}). Where is it now?"}],
+        [{"role": "user", "content": "My order {order_a} from {email_a} was placed on the 30th of September and I'm still waiting."}],
+        [{"role": "user", "content": "I ordered on October 2 (order {order_a}, {email_a}). Will it arrive this weekend?"}],
+        [{"role": "user", "content": "Order date was September 26, order {order_a}, email {email_a}. What's the status?"}],
+        [{"role": "user", "content": "I made order {order_a} on 1 October with {email_a}. Is it running on time?"}]
+      ]
+    },
+    "own_date_confirm": {
+      "split": "train",
+      "category": "customer_date",
+      "scenario": "customer_date",
+      "orders": [{"letter": "a", "email": "matching"}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "I ordered {order_a} (email {email_a}) on October 1. Can you tell me when it shipped and when it arrives?"}],
+        [{"role": "user", "content": "Placed {order_a} on Sept 30 with {email_a}. What day did it ship?"}],
+        [{"role": "user", "content": "Order {order_a}, email {email_a}, bought on 2026-09-28. How long has it been in transit?"}],
+        [{"role": "user", "content": "I bought it on the 29th of September, order {order_a}, email {email_a}. Which day will it reach me?"}],
+        [{"role": "user", "content": "Ordered on 10/2, number {order_a} and {email_a}. Is it out for delivery today?"}],
+        [{"role": "user", "content": "On September 25 I placed {order_a} (my email: {email_a}). Why is it taking so long?"}],
+        [{"role": "user", "content": "Bought on Oct 1: {order_a}, {email_a}. Please give me a delivery date."}]
+      ]
+    },
+    "date_given_status": {
+      "split": "dev",
+      "category": "customer_date",
+      "scenario": "customer_date",
+      "orders": [{"letter": "a", "email": "matching"}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "My purchase {order_a} (account {email_a}) went through on October 3. Any status?"}],
+        [{"role": "user", "content": "Back on Sept 24 I placed order {order_a} with {email_a}. Has it arrived?"}],
+        [{"role": "user", "content": "It was ordered the 28th of September: {order_a}, {email_a}. What is its progress?"}],
+        [{"role": "user", "content": "Order {order_a} / {email_a}, dated 10/1. Where is it?"}],
+        [{"role": "user", "content": "Placed {order_a} on Oct 4 under {email_a}. Is it packed yet?"}],
+        [{"role": "user", "content": "I paid for {order_a} on September 30th, email {email_a}. Anything new?"}],
+        [{"role": "user", "content": "On the 2nd of October I ordered {order_a} using {email_a}. Is it still processing?"}]
+      ]
+    },
+    "date_given_ship_day": {
+      "split": "dev",
+      "category": "customer_date",
+      "scenario": "customer_date",
+      "orders": [{"letter": "a", "email": "matching"}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Order {order_a}, ordered September 29, email {email_a}. When does it get delivered?"}],
+        [{"role": "user", "content": "I ordered on October 3rd ({order_a}, {email_a}). Can it be here by next week?"}],
+        [{"role": "user", "content": "My order {order_a} dates from 9/27 and uses {email_a}. How long should I wait?"}],
+        [{"role": "user", "content": "Ordered Sept 28. The order number is {order_a}, the email is {email_a}. What weekday is the delivery?"}],
+        [{"role": "user", "content": "It's {order_a} with {email_a}, and I bought it on 3 October. When will it be shipped?"}],
+        [{"role": "user", "content": "Order from the 1st of October: {order_a}, {email_a}. Tell me the arrival date."}],
+        [{"role": "user", "content": "I bought it on October 2, number {order_a}, email {email_a}. Is it delayed?"}]
+      ]
+    },
+    "switch_asks_date": {
+      "split": "train",
+      "category": "order_switch",
+      "scenario": "switched_order",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED", "DELIVERED"]}, {"letter": "b", "email": "matching"}],
+      "allowed": ["a", "b"],
+      "forbidden": [],
+      "expect_order": "b",
+      "templates": [
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks. I also bought {order_b} with {email_b}. Which day does that one arrive?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Perfect. Now what about {order_b}, email {email_b}? When is it due?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Okay great. Can you check {order_b} too? Email is {email_b}. What date will it get here?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it shipped?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thank you. Different order now: {order_b} ({email_b}). On what day does it come?"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. Where is my parcel?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Cool, one more order, {order_b}, same shop, email {email_b}. Is it arriving tomorrow?"}],
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Could you look it up?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Got it. Next is {order_b} with {email_b}. How many days until it's delivered?"}]
+      ]
+    },
+    "switch_asks_tracking": {
+      "split": "train",
+      "category": "order_switch",
+      "scenario": "switched_order",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED", "DELIVERED"]}, {"letter": "b", "email": "matching"}],
+      "allowed": ["a", "b"],
+      "forbidden": [],
+      "expect_order": "b",
+      "templates": [
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks! Order {order_b} as well, email {email_b}. Tracking number?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Now {order_b} please ({email_b}). Who is the carrier and what's the tracking number?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Great. And for {order_b}, my email {email_b}, where's the parcel now?"}],
+        [{"role": "user", "content": "Hey there, it's about {order_a} and my email is {email_a}. Has it shipped?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Ok. Can you give me the tracking details for {order_b}? Email: {email_b}"}],
+        [{"role": "user", "content": "I have a question on {order_a}, registered to {email_a}. Where is my parcel?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Next, {order_b} under {email_b}. Which courier is it with?"}],
+        [{"role": "user", "content": "Hi, I'm checking on order {order_a}, the email is {email_a}. Could you look it up?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thank you. What about {order_b}, {email_b}? Has it been delivered?"}]
+      ]
+    },
+    "switch_asks_arrival": {
+      "split": "dev",
+      "category": "order_switch",
+      "scenario": "switched_order",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED", "DELIVERED"]}, {"letter": "b", "email": "matching"}],
+      "allowed": ["a", "b"],
+      "forbidden": [],
+      "expect_order": "b",
+      "templates": [
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Appreciated. Another one: {order_b}, signed up as {email_b}. When will it land?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Alright, and the other order {order_b} (email {email_b})? What date should I expect?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Good to know. Please check {order_b} registered to {email_b} for the arrival day."}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Understood. For {order_b}, the email is {email_b}. Will it come this week?"}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). What does the system say?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Nice. Let's do {order_b} now, mail on file {email_b}. Any delivery date?"}],
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. Please check its progress."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Okay. {order_b} is my gift order, email {email_b}. What's the weekday it comes?"}]
+      ]
+    },
+    "switch_asks_courier_day": {
+      "split": "dev",
+      "category": "order_switch",
+      "scenario": "switched_order",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED", "DELIVERED"]}, {"letter": "b", "email": "matching"}],
+      "allowed": ["a", "b"],
+      "forbidden": [],
+      "expect_order": "b",
+      "templates": [
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks a lot. Same question for {order_b} with {email_b}: courier and delivery day?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Fine. Look at {order_b} ({email_b}) and tell me which company delivers it."}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Great, thank you. {order_b} and {email_b}: has it arrived yet?"}],
+        [{"role": "user", "content": "Evening! My order is {order_a} and my login email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "That helps. Now {order_b}, address on {email_b}. How long until it comes?"}],
+        [{"role": "user", "content": "Regarding {order_a} (placed using {email_a}). What does the system say?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Ok. How about {order_b}? I used {email_b}. Give me its tracking number."}],
+        [{"role": "user", "content": "Good morning. Order {order_a}, email address {email_a}. Please check its progress."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Perfect. Last one, {order_b} under {email_b}. Is it out for delivery today?"}]
+      ]
+    },
+    "delayed_new_date": {
+      "split": "train",
+      "category": "retry_date",
+      "scenario": "retry_date",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["DELAYED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Has it shipped?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Okay, so when will it actually arrive?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Where is my parcel?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "What's the new delivery date?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "How many more days of delay should I expect?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Will it get here before the weekend now?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Can you promise a day it will arrive?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Is it coming tomorrow after all?"}]
+      ]
+    },
+    "missed_delivery_retry": {
+      "split": "train",
+      "category": "retry_date",
+      "scenario": "retry_date",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["ATTEMPTED_DELIVERY"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "My order number is {order_a} and I used {email_a} at checkout. Has it shipped?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "When will they try to deliver again?"}],
+        [{"role": "user", "content": "Looking at order {order_a} (email {email_a}). Where is my parcel?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "What day is the next delivery attempt?"}],
+        [{"role": "user", "content": "Hello! I ordered under {email_a}, order {order_a}. Could you look it up?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "Will they come back tomorrow?"}],
+        [{"role": "user", "content": "Can you pull up {order_a}? Email: {email_a} Any news on it?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "Can they redeliver today?"}],
+        [{"role": "user", "content": "Quick one about {order_a}, which is under {email_a}. Can you check where it is?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "What time will the courier return?"}],
+        [{"role": "user", "content": "Order {order_a}, bought with {email_a}. What's the status?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "How many days until the second attempt?"}]
+      ]
+    },
+    "delayed_when_now": {
+      "split": "dev",
+      "category": "retry_date",
+      "scenario": "retry_date",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["DELAYED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Right. What is the updated arrival day?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. What does the system say?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Do you know the revised date?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Is it going to be a few days or a couple of weeks?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Could it still make it today?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Please tell me the new ETA."}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "Order {order_a} is delayed. Is there anything else I can help with?"}, {"role": "user", "content": "Which weekday is it expected now?"}]
+      ]
+    },
+    "failed_attempt_next_try": {
+      "split": "dev",
+      "category": "retry_date",
+      "scenario": "retry_date",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["ATTEMPTED_DELIVERY"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Reference {order_a}; the account email is {email_a}. Is it on its way?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "Understood. When is the courier coming back?"}],
+        [{"role": "user", "content": "This is for {order_a}, ordered by {email_a}. What does the system say?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "Which day is the re-delivery?"}],
+        [{"role": "user", "content": "Can I ask about my purchase {order_a}? I signed up as {email_a}. Please check its progress."}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "Will they try again tomorrow morning?"}],
+        [{"role": "user", "content": "Thanks for being there. Order {order_a} / {email_a}. How is it going?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "How soon can they retry?"}],
+        [{"role": "user", "content": "Question regarding {order_a}, the mail on file is {email_a}. Could you look into it for me?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "At what hour will they come?"}],
+        [{"role": "user", "content": "Checking in about {order_a} from {email_a}. Is there an update?"}, {"role": "assistant", "content": "A delivery attempt for order {order_a} did not succeed. Is there anything else I can help with?"}, {"role": "user", "content": "Can I choose the day for the next attempt?"}]
+      ]
+    }
+  }
+}

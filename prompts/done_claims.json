@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "\\bpassed your request\\b",
+    "\\b(?:ticket|reference) number\\b",
+    "\\bi(?: have|'ve) (?:asked|handed|passed|requested|sent)\\b",
+    "\\b(?:connected|handed) you\\b",
+    "\\b(?:HO|SR)-\\d{4,}\\b"
+  ],
+  "promises": [
+    "\\bi(?:'ll| will) (?:let you know|keep you|get back|notify|update|follow up|reach out|contact)\\b",
+    "\\bwe(?:'ll| will) (?:let you know|keep you|get back|notify|update|follow up|reach out|contact|be in touch)\\b",
+    "\\byou(?:'ll| will) (?:hear from us|be notified|be contacted|receive an? (?:email|update|notification|message))\\b",
+    "\\bkeep you (?:posted|informed|updated)\\b",
+    "\\blet you know\\b"
+  ]
+}

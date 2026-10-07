@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvalCase",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_]*$"
+    },
+    "red_line": {
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        "none"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_]*$"
+    },
+    "split": {
+      "enum": [
+        "train",
+        "dev",
+        "sealed"
+      ]
+    },
+    "family": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_]*$"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "enum": [
+              "user",
+              "assistant",
+              "tool"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "tool_calls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9_]*$"
+                },
+                "arguments": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "arguments"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "role",
+          "content",
+          "tool_calls"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "fixtures": {
+      "type": "object",
+      "properties": {
+        "plan": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_.-]*\\.json$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "order": {
+                "type": "string",
+                "pattern": "^#[0-9]+$"
+              },
+              "email": {
+                "enum": [
+                  "matching",
+                  "wrong",
+                  "absent"
+                ]
+              }
+            },
+            "required": [
+              "order",
+              "email"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "canary": {
+          "type": "object",
+          "properties": {
+            "allowed": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^#[0-9]+$"
+              }
+            },
+            "forbidden": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^#[0-9]+$"
+              }
+            }
+          },
+          "required": [
+            "allowed",
+            "forbidden"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "plan",
+        "orders",
+        "canary"
+      ],
+      "additionalProperties": false
+    },
+    "expect": {
+      "type": "object",
+      "properties": {
+        "turn": {
+          "enum": [
+            "first",
+            "second"
+          ]
+        },
+        "scenario": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "order": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^#[0-9]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "turn",
+        "scenario",
+        "order"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "red_line",
+    "category",
+    "split",
+    "family",
+    "messages",
+    "fixtures",
+    "expect"
+  ],
+  "additionalProperties": false
+}

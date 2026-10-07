@@ -1,0 +1,314 @@
+{
+  "version": 1,
+  "seed": 20261008,
+  "red_line": 1,
+  "plan": "shipment-plan-v1.json",
+  "families": {
+    "kb_ask_ship_where_when": {
+      "split": "train",
+      "category": "policy_question",
+      "scenario": "ship_regions_times",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "How many days do you take to get an order out the door after I pay?"}],
+        [{"role": "user", "content": "Do you deliver to the UK, or only North America?"}],
+        [{"role": "user", "content": "How long would a parcel to Toronto take to arrive?"}],
+        [{"role": "user", "content": "How many days does standard delivery take inside the US?"}],
+        [{"role": "user", "content": "My friend wants a gift sent to Vancouver. Is that possible, and how long does it take?"}],
+        [{"role": "user", "content": "Is there a faster delivery option, and how many days would that take?"}]
+      ]
+    },
+    "kb_ask_shipping_fees": {
+      "split": "train",
+      "category": "policy_question",
+      "scenario": "shipping_cost",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "How much does it cost to send a standard parcel inside the States?"}],
+        [{"role": "user", "content": "What order total makes delivery free?"}],
+        [{"role": "user", "content": "How much extra is the quick delivery option?"}],
+        [{"role": "user", "content": "Is shipping to Canada expensive? What would I pay?"}],
+        [{"role": "user", "content": "Do I get hit with customs duties when ordering from Canada?"}],
+        [{"role": "user", "content": "Is shipping free on a sixty dollar order?"}]
+      ]
+    },
+    "kb_ask_return_rules": {
+      "split": "train",
+      "category": "policy_question",
+      "scenario": "returns",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "What is the deadline for bringing an item back?"}],
+        [{"role": "user", "content": "Can I return something I already opened and used?"}],
+        [{"role": "user", "content": "Is there anything I am not allowed to return?"}],
+        [{"role": "user", "content": "Do I have to pay the postage when I return something?"}],
+        [{"role": "user", "content": "What is the process to begin a return?"}],
+        [{"role": "user", "content": "Could I swap a jumper for another size instead of returning it?"}]
+      ]
+    },
+    "kb_ask_refund_money": {
+      "split": "train",
+      "category": "policy_question",
+      "scenario": "refunds",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "When will the money from my return reach my card?"}],
+        [{"role": "user", "content": "If I send something back, do I also get the delivery fee refunded?"}],
+        [{"role": "user", "content": "I cancelled an order. How soon is my payment returned?"}],
+        [{"role": "user", "content": "How many business days does a refund take to show up?"}],
+        [{"role": "user", "content": "Do refunds go to the card I paid with or into store credit?"}],
+        [{"role": "user", "content": "What if I want to cancel after it has already shipped?"}]
+      ]
+    },
+    "kb_ask_tracking_help": {
+      "split": "train",
+      "category": "policy_question",
+      "scenario": "tracking",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "When does a tracking number show up after my order leaves?"}],
+        [{"role": "user", "content": "How long can a tracker stay on its first scan before that counts as a problem?"}],
+        [{"role": "user", "content": "How do I use the tracking link to follow a parcel on its way?"}],
+        [{"role": "user", "content": "Why would a tracking page show no updates for the first day?"}],
+        [{"role": "user", "content": "After how long do you officially count a parcel as lost?"}],
+        [{"role": "user", "content": "How long should I wait before telling you something is wrong with a delivery?"}]
+      ]
+    },
+    "kb_ask_team_contact": {
+      "split": "train",
+      "category": "policy_question",
+      "scenario": "contact",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "What hours is your support staff around?"}],
+        [{"role": "user", "content": "How quickly does someone from the team write back?"}],
+        [{"role": "user", "content": "Is there a way to talk to a real person through this chat?"}],
+        [{"role": "user", "content": "Is your team open on Sundays?"}],
+        [{"role": "user", "content": "What time zone are your support hours in?"}],
+        [{"role": "user", "content": "How late in the day is your team available?"}]
+      ]
+    },
+    "kb_ask_payments_privacy": {
+      "split": "train",
+      "category": "policy_question",
+      "scenario": "payment_privacy",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Which cards can I pay with at checkout?"}],
+        [{"role": "user", "content": "At what moment does my card get charged?"}],
+        [{"role": "user", "content": "If checkout fails, am I charged anyway?"}],
+        [{"role": "user", "content": "Why must I give my email before you discuss an order?"}],
+        [{"role": "user", "content": "What happens to the things I type into this chat?"}],
+        [{"role": "user", "content": "Can I enter my real card details here, or is this a mock shop?"}]
+      ]
+    },
+    "kb_probe_delivery_speed": {
+      "split": "dev",
+      "category": "policy_question",
+      "scenario": "delivery_speed",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Roughly how many days until my order gets to me inside the US?"}],
+        [{"role": "user", "content": "I live in Ontario. How many business days for delivery to my place?"}],
+        [{"role": "user", "content": "Is express delivery quicker, and by how many days?"}],
+        [{"role": "user", "content": "How many working days does express shipping take in the US?"}],
+        [{"role": "user", "content": "Do orders placed late on Friday get processed over the weekend?"}],
+        [{"role": "user", "content": "What is the longest I would wait for domestic standard shipping?"}]
+      ]
+    },
+    "kb_probe_price_of_shipping": {
+      "split": "dev",
+      "category": "policy_question",
+      "scenario": "shipping_price",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Cost of regular postage in the US?"}],
+        [{"role": "user", "content": "Is there a minimum spend for free delivery?"}],
+        [{"role": "user", "content": "What is the fee for the speedy shipping tier?"}],
+        [{"role": "user", "content": "How much does postage to Canada come to?"}],
+        [{"role": "user", "content": "Does the free shipping threshold apply before or after tax?"}],
+        [{"role": "user", "content": "Does an order of forty dollars get free shipping?"}]
+      ]
+    },
+    "kb_probe_sending_items_back": {
+      "split": "dev",
+      "category": "policy_question",
+      "scenario": "returns_dev",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "What is your window for returns after something is delivered?"}],
+        [{"role": "user", "content": "Do the tags need to stay on if I am sending clothes back?"}],
+        [{"role": "user", "content": "Can I send back a gift card I received?"}],
+        [{"role": "user", "content": "Is a personalised mug returnable?"}],
+        [{"role": "user", "content": "I want to hand something back. Who do I tell?"}],
+        [{"role": "user", "content": "Does the original box matter for a return?"}]
+      ]
+    },
+    "kb_probe_money_back": {
+      "split": "dev",
+      "category": "policy_question",
+      "scenario": "refunds_dev",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "After you receive my parcel, how long until the money is back with me?"}],
+        [{"role": "user", "content": "Is the shipping fee I paid refunded?"}],
+        [{"role": "user", "content": "Does a cancelled purchase get paid back the same way I paid?"}],
+        [{"role": "user", "content": "How many days does a refund usually take?"}],
+        [{"role": "user", "content": "If you sent the wrong item, do I get my shipping fee back?"}],
+        [{"role": "user", "content": "Which payment method does the refund go back to?"}]
+      ]
+    },
+    "kb_probe_damaged_or_wrong": {
+      "split": "dev",
+      "category": "policy_question",
+      "scenario": "damage",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "My item showed up broken. What should I do?"}],
+        [{"role": "user", "content": "How long after delivery can I report a damaged product?"}],
+        [{"role": "user", "content": "The box contained the wrong colour. Do I pay to send it back?"}],
+        [{"role": "user", "content": "Will you want a photo of the damage?"}],
+        [{"role": "user", "content": "What are my choices if something arrives smashed?"}],
+        [{"role": "user", "content": "When can a customer ask for a replacement if a parcel never arrives?"}]
+      ]
+    },
+    "kb_probe_changing_orders": {
+      "split": "dev",
+      "category": "policy_question",
+      "scenario": "changes",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Can I switch the delivery address after paying?"}],
+        [{"role": "user", "content": "Is it too late to cancel once the shipping email arrives?"}],
+        [{"role": "user", "content": "Is it still possible to change where the parcel is sent?"}],
+        [{"role": "user", "content": "Can I cancel my order the day I placed it?"}],
+        [{"role": "user", "content": "I typed the wrong street name at checkout, can it be corrected?"}],
+        [{"role": "user", "content": "What happens to a cancelled order's payment?"}]
+      ]
+    },
+    "kb_probe_holidays_and_team": {
+      "split": "dev",
+      "category": "policy_question",
+      "scenario": "holidays_team",
+      "orders": [],
+      "allowed": [],
+      "forbidden": [],
+      "expect_order": null,
+      "templates": [
+        [{"role": "user", "content": "Does the end of December hold up delivery?"}],
+        [{"role": "user", "content": "Do you ship out parcels on bank holidays?"}],
+        [{"role": "user", "content": "How much longer does the pre-Christmas rush add?"}],
+        [{"role": "user", "content": "At what times can a human at your company talk to me?"}],
+        [{"role": "user", "content": "Which weekdays is the human team online?"}],
+        [{"role": "user", "content": "Are you a demo or a real store?"}]
+      ]
+    },
+    "policy_after_lookup_t": {
+      "split": "train",
+      "category": "policy_after_order",
+      "scenario": "policy_turn_after_order_turn",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Could you check order {order_a} for me? My email is {email_a}."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks! Separate question: how long do refunds take?"}],
+        [{"role": "user", "content": "Order {order_a}, mail {email_a}. Can you check it?"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Got it. What is your return window by the way?"}],
+        [{"role": "user", "content": "Hello, I need news about {order_a} (email {email_a})."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "And how much does express shipping cost for next time?"}],
+        [{"role": "user", "content": "Could you look at {order_a}? I used {email_a} at checkout."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "One more thing, do you take PayPal?"}],
+        [{"role": "user", "content": "Status of {order_a} please, my address is {email_a}."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Cool. Can I cancel something that has already shipped?"}],
+        [{"role": "user", "content": "I'm {email_a} and I'm waiting on {order_a}."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Good to know. What are your support hours, in case I need a person?"}]
+      ]
+    },
+    "policy_after_lookup_d": {
+      "split": "dev",
+      "category": "policy_after_order",
+      "scenario": "policy_turn_after_order_turn",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Is {order_a} moving? The email is {email_a}."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Perfect. Unrelated, but what does Canada shipping cost?"}],
+        [{"role": "user", "content": "Please find {order_a} for {email_a}."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Understood. How are refunds paid out?"}],
+        [{"role": "user", "content": "Checking in on {order_a}, signed up with {email_a}."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Thanks. Do you charge shipping on orders over fifty dollars?"}],
+        [{"role": "user", "content": "What is happening with {order_a}? Email: {email_a}"}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "OK. Could I swap an item for another size later?"}],
+        [{"role": "user", "content": "{email_a} here, asking about {order_a}."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Great, and what if a parcel arrives damaged?"}],
+        [{"role": "user", "content": "Any update on {order_a}? Contact email {email_a}."}, {"role": "assistant", "content": "I found order {order_a}. It has shipped with {carrier_a}, tracking number {track_a}. Is there anything else I can help with?"}, {"role": "user", "content": "Alright, do you process orders over the holidays?"}]
+      ]
+    },
+    "lookup_after_policy_t": {
+      "split": "train",
+      "category": "order_after_policy",
+      "scenario": "order_turn_after_policy_turn",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "DELAYED", "ATTEMPTED_DELIVERY", "DELIVERED", "FULFILLED_NO_TRACKING", "UNFULFILLED", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Do you sell candles?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Alright. Then I need an update on order {order_a}, the email on it is {email_a}."}],
+        [{"role": "user", "content": "Can students get a cheaper price?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Okay, could you check {order_a} for me? Email {email_a}."}],
+        [{"role": "user", "content": "Can I get a bulk price for twenty mugs?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "No worries. Please look up {order_a}, I ordered with {email_a}."}],
+        [{"role": "user", "content": "Do you gift wrap?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Fine. Where is {order_a} at the moment? {email_a} is the email."}],
+        [{"role": "user", "content": "Do you have an outlet store?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Then let me ask about {order_a} instead, email {email_a}."}],
+        [{"role": "user", "content": "Is there a loyalty card?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Understood. What is going on with {order_a}? I'm {email_a}."}]
+      ]
+    },
+    "lookup_after_policy_d": {
+      "split": "dev",
+      "category": "order_after_policy",
+      "scenario": "order_turn_after_policy_turn",
+      "orders": [{"letter": "a", "email": "matching", "scenarios": ["IN_TRANSIT", "OUT_FOR_DELIVERY", "DELAYED", "ATTEMPTED_DELIVERY", "DELIVERED", "FULFILLED_NO_TRACKING", "UNFULFILLED", "PARTIALLY_FULFILLED"]}],
+      "allowed": ["a"],
+      "forbidden": [],
+      "expect_order": "a",
+      "templates": [
+        [{"role": "user", "content": "Do you offer free samples?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Never mind. I would like news on {order_a}, the email is {email_a}."}],
+        [{"role": "user", "content": "Can I preorder items?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "I see. Could you track {order_a}? I used {email_a}."}],
+        [{"role": "user", "content": "Do you plan a summer sale?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Thanks anyway. Order {order_a}, address {email_a}: status please."}],
+        [{"role": "user", "content": "Do you have a stall at any craft fairs?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "OK, so about {order_a}, registered under {email_a}."}],
+        [{"role": "user", "content": "Is there a referral bonus?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Right. Help me with {order_a} then, my mail is {email_a}."}],
+        [{"role": "user", "content": "Do you stock left-handed scissors?"}, {"role": "assistant", "content": "I could not find that in our store policies. Would you like me to connect you with a member of our team?"}, {"role": "user", "content": "Fair enough. How is {order_a} doing? Email {email_a}."}]
+      ]
+    }
+  }
+}

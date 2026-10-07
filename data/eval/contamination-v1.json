@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "ngram_words": 8,
+  "min_words": 4,
+  "max_shared_ngrams": 0,
+  "slots": [
+    "\\{[a-z_]+\\}",
+    "[\\w.+-]+@[\\w-]+(?:\\.[\\w-]+)+",
+    "#?\\d{3,}"
+  ]
+}

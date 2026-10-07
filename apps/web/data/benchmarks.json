@@ -1,0 +1,176 @@
+{
+  "source": {
+    "code_tree_sha": "ee6c5c626278120523b9af02255958c0c9f5048c",
+    "rules_version": "65f9a4bf58d03aef",
+    "backend_id": "transformers-mps-bfloat16",
+    "splits": [
+      "dev",
+      "train"
+    ],
+    "graded": 933
+  },
+  "tokens": {
+    "full": {
+      "turns": 877,
+      "model_calls": 881,
+      "rules_tokens_per_call": 526.0,
+      "prefill_tokens_per_turn": 971.184,
+      "total_tokens_per_turn": 999.177
+    },
+    "gist": {
+      "turns": 877,
+      "model_calls": 908,
+      "rules_tokens_per_call": 19.0,
+      "prefill_tokens_per_turn": 477.734,
+      "total_tokens_per_turn": 505.466
+    }
+  },
+  "composition": {
+    "tools_tokens_per_call": 395,
+    "chat_tokens_per_call": 47,
+    "calls_per_case": 0.9732047159699893,
+    "saved_per_call": 507,
+    "saved_per_turn": 493.4147909967846,
+    "prefix_tokens": 921,
+    "full_call_tokens": 968,
+    "gist_call_tokens": 461
+  },
+  "red_lines": [
+    {
+      "metric": "fact_provenance_failures",
+      "min_cases": 300,
+      "results": {
+        "full": {
+          "raw": {
+            "failures": 5,
+            "n": 464,
+            "rate": 0.010776,
+            "upper95": 0.022523
+          },
+          "final": {
+            "failures": 0,
+            "n": 464,
+            "rate": 0.0,
+            "upper95": 0.006436
+          }
+        },
+        "gist": {
+          "raw": {
+            "failures": 20,
+            "n": 464,
+            "rate": 0.043103,
+            "upper95": 0.06202
+          },
+          "final": {
+            "failures": 0,
+            "n": 464,
+            "rate": 0.0,
+            "upper95": 0.006436
+          }
+        }
+      }
+    },
+    {
+      "metric": "invented_date_failures",
+      "min_cases": 300,
+      "results": {
+        "full": {
+          "raw": {
+            "failures": 5,
+            "n": 464,
+            "rate": 0.010776,
+            "upper95": 0.022523
+          },
+          "final": {
+            "failures": 0,
+            "n": 464,
+            "rate": 0.0,
+            "upper95": 0.006436
+          }
+        },
+        "gist": {
+          "raw": {
+            "failures": 16,
+            "n": 464,
+            "rate": 0.034483,
+            "upper95": 0.051904
+          },
+          "final": {
+            "failures": 0,
+            "n": 464,
+            "rate": 0.0,
+            "upper95": 0.006436
+          }
+        }
+      }
+    },
+    {
+      "metric": "unauthorized_order_data_failures",
+      "min_cases": 100,
+      "results": {
+        "full": {
+          "raw": {
+            "failures": 0,
+            "n": 933,
+            "rate": 0.0,
+            "upper95": 0.003206
+          },
+          "final": {
+            "failures": 0,
+            "n": 933,
+            "rate": 0.0,
+            "upper95": 0.003206
+          }
+        },
+        "gist": {
+          "raw": {
+            "failures": 0,
+            "n": 933,
+            "rate": 0.0,
+            "upper95": 0.003206
+          },
+          "final": {
+            "failures": 0,
+            "n": 933,
+            "rate": 0.0,
+            "upper95": 0.003206
+          }
+        }
+      }
+    },
+    {
+      "metric": "unsafe_compliance_failures",
+      "min_cases": 150,
+      "results": {
+        "full": {
+          "raw": {
+            "failures": 16,
+            "n": 230,
+            "rate": 0.069565,
+            "upper95": 0.103742
+          },
+          "final": {
+            "failures": 0,
+            "n": 230,
+            "rate": 0.0,
+            "upper95": 0.01294
+          }
+        },
+        "gist": {
+          "raw": {
+            "failures": 45,
+            "n": 230,
+            "rate": 0.195652,
+            "upper95": 0.243706
+          },
+          "final": {
+            "failures": 0,
+            "n": 230,
+            "rate": 0.0,
+            "upper95": 0.01294
+          }
+        }
+      }
+    }
+  ]
+}

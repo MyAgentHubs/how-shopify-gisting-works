@@ -1,0 +1,12 @@
+{
+  "prefix": "HO-",
+  "digits": 8,
+  "reasons": [
+    "no_tracking",
+    "attempted_delivery",
+    "delayed",
+    "unavailable",
+    "locked",
+    "customer_request"
+  ]
+}

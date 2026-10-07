@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Benchmarks",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "code_tree_sha": {
+          "type": "string"
+        },
+        "rules_version": {
+          "type": "string"
+        },
+        "backend_id": {
+          "type": "string"
+        },
+        "splits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "graded": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "code_tree_sha",
+        "rules_version",
+        "backend_id",
+        "splits",
+        "graded"
+      ],
+      "additionalProperties": false
+    },
+    "tokens": {
+      "type": "object",
+      "properties": {
+        "full": {
+          "type": "object",
+          "properties": {
+            "turns": {
+              "type": "integer"
+            },
+            "model_calls": {
+              "type": "integer"
+            },
+            "rules_tokens_per_call": {
+              "type": "number"
+            },
+            "prefill_tokens_per_turn": {
+              "type": "number"
+            },
+            "total_tokens_per_turn": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "turns",
+            "model_calls",
+            "rules_tokens_per_call",
+            "prefill_tokens_per_turn",
+            "total_tokens_per_turn"
+          ],
+          "additionalProperties": false
+        },
+        "gist": {
+          "type": "object",
+          "properties": {
+            "turns": {
+              "type": "integer"
+            },
+            "model_calls": {
+              "type": "integer"
+            },
+            "rules_tokens_per_call": {
+              "type": "number"
+            },
+            "prefill_tokens_per_turn": {
+              "type": "number"
+            },
+            "total_tokens_per_turn": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "turns",
+            "model_calls",
+            "rules_tokens_per_call",
+            "prefill_tokens_per_turn",
+            "total_tokens_per_turn"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "full",
+        "gist"
+      ],
+      "additionalProperties": false
+    },
+    "composition": {
+      "type": "object",
+      "properties": {
+        "tools_tokens_per_call": {
+          "type": "integer"
+        },
+        "chat_tokens_per_call": {
+          "type": "integer"
+        },
+        "calls_per_case": {
+          "type": "number"
+        },
+        "saved_per_call": {
+          "type": "integer"
+        },
+        "saved_per_turn": {
+          "type": "number"
+        },
+        "prefix_tokens": {
+          "type": "integer"
+        },
+        "full_call_tokens": {
+          "type": "integer"
+        },
+        "gist_call_tokens": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "tools_tokens_per_call",
+        "chat_tokens_per_call",
+        "calls_per_case",
+        "saved_per_call",
+        "saved_per_turn",
+        "prefix_tokens",
+        "full_call_tokens",
+        "gist_call_tokens"
+      ],
+      "additionalProperties": false
+    },
+    "red_lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string"
+          },
+          "min_cases": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "object",
+            "properties": {
+              "full": {
+                "type": "object",
+                "properties": {
+                  "raw": {
+                    "type": "object",
+                    "properties": {
+                      "failures": {
+                        "type": "integer"
+                      },
+                      "n": {
+                        "type": "integer"
+                      },
+                      "rate": {
+                        "type": "number"
+                      },
+                      "upper95": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "failures",
+                      "n",
+                      "rate",
+                      "upper95"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "final": {
+                    "type": "object",
+                    "properties": {
+                      "failures": {
+                        "type": "integer"
+                      },
+                      "n": {
+                        "type": "integer"
+                      },
+                      "rate": {
+                        "type": "number"
+                      },
+                      "upper95": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "failures",
+                      "n",
+                      "rate",
+                      "upper95"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "raw",
+                  "final"
+                ],
+                "additionalProperties": false
+              },
+              "gist": {
+                "type": "object",
+                "properties": {
+                  "raw": {
+                    "type": "object",
+                    "properties": {
+                      "failures": {
+                        "type": "integer"
+                      },
+                      "n": {
+                        "type": "integer"
+                      },
+                      "rate": {
+                        "type": "number"
+                      },
+                      "upper95": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "failures",
+                      "n",
+                      "rate",
+                      "upper95"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "final": {
+                    "type": "object",
+                    "properties": {
+                      "failures": {
+                        "type": "integer"
+                      },
+                      "n": {
+                        "type": "integer"
+                      },
+                      "rate": {
+                        "type": "number"
+                      },
+                      "upper95": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "failures",
+                      "n",
+                      "rate",
+                      "upper95"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "raw",
+                  "final"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "full",
+              "gist"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "metric",
+          "min_cases",
+          "results"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "source",
+    "tokens",
+    "composition",
+    "red_lines"
+  ],
+  "additionalProperties": false
+}

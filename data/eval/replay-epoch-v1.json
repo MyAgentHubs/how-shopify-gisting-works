@@ -1,0 +1,20 @@
+{
+  "paths": [
+    "prompts/system_rules.md",
+    "prompts/reply_phrases.json",
+    "prompts/chat_variants.json",
+    "prompts/qwen3_tools_preamble.txt",
+    "prompts/qwen3_tools_postamble.txt",
+    "prompts/tools",
+    "src/gisting/prompt/assemble.py",
+    "src/gisting/prompt/files.py",
+    "src/gisting/prompt/messages.py",
+    "src/gisting/prompt/parcel_copy.py",
+    "src/gisting/prompt/phrases.py",
+    "src/gisting/prompt/rules.py",
+    "src/gisting/prompt/schema.py",
+    "src/gisting/prompt/segments.py",
+    "src/gisting/prompt/tokenizer.py",
+    "src/gisting/prompt/variants.py"
+  ]
+}

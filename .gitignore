@@ -1,0 +1,61 @@
+# Local Python environment (the current workspace itself contains a venv)
+/bin/
+/lib/
+/include/
+/pyvenv.cfg
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Private data, model weights and generated experiment results
+/artifacts/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.onnx
+*.gguf
+*.log
+
+# Credentials and local agent/CLI state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+.dev.vars*
+.wrangler/
+.shopify/
+.shopify.lock
+.agentloom/
+.codex/
+.claude/
+
+# Dependencies, builds and editor state
+node_modules/
+dist/
+build/
+.DS_Store
+.idea/
+.vscode/
+
+# Unused generated Shopify template; retain only minimal app metadata
+/shopify-app/*
+!/shopify-app/gisting-order-agent/
+/shopify-app/gisting-order-agent/*
+!/shopify-app/gisting-order-agent/shopify.app.toml
+!/shopify-app/gisting-order-agent/AGENTS.md
+!/shopify-app/gisting-order-agent/package.json
+
+# Local, user-owned learning scratch files
+/count_tokens.py
+/hf_tokenizer.py
+/hf_tokenizer_gpt.py
+/token_probe.py
+/test_cache.py

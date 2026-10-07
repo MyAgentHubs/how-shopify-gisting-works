@@ -1,0 +1,23 @@
+{
+  "maxMessageChars": 300,
+  "sessionIdPattern": "^[A-Za-z0-9_-]{8,64}$",
+  "sessionIdMaxChars": 64,
+  "maxBodyBytes": 4096,
+  "socketTimeoutS": 10,
+  "sessionTtlS": 900,
+  "maxSessions": 500,
+  "maxTurnsPerSession": 12,
+  "maxSessionBytes": 16384,
+  "maxWaiting": 2,
+  "totalDeadlineS": 20,
+  "retryAfterS": 5,
+  "minSecretChars": 32,
+  "ipFailureLimit": 20,
+  "failureTtlS": 86400,
+  "maxFailureKeys": 10000,
+  "ipDigestPattern": "^[0-9a-f]{64}$",
+  "shopifyTimeoutS": 6,
+  "shopifyReadAttempts": 2,
+  "shopifyRetryS": 0.5,
+  "shopifyMaxPauseS": 2
+}

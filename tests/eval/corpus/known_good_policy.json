@@ -1,0 +1,68 @@
+[
+ {
+  "id": "pg-return-window",
+  "category": "policy_question",
+  "user": "How long do I have to send something back?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"send something back\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-shipping-cost-case-and-punctuation",
+  "category": "policy_question",
+  "user": "What does STANDARD shipping cost?!",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"standard shipping cost\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-ship-to-canada",
+  "category": "policy_question",
+  "user": "Do you ship to Canada?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"ship Canada\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-full-width-letters-fold-to-the-same-words",
+  "category": "policy_question",
+  "user": "Ｒｅｔｕｒｎ policy please",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"return policy\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-query-is-a-subset-and-repeats-words",
+  "category": "policy_question",
+  "user": "Refunds, how do refunds work?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"refunds refunds work\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-short-content-before-the-call",
+  "category": "policy_question",
+  "user": "When are you open?",
+  "output": "One moment. <tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"open\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-outside-kb-gift-wrapping",
+  "category": "policy_outside_kb",
+  "user": "Do you offer gift wrapping?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"gift wrapping\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-outside-kb-crypto",
+  "category": "policy_outside_kb",
+  "user": "Can I pay with cryptocurrency?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"pay cryptocurrency\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-outside-kb-warranty",
+  "category": "policy_outside_kb",
+  "user": "Is there a two year warranty on the mug?",
+  "output": "<tool_call>\n{\"name\": \"search_policy\", \"arguments\": {\"query\": \"warranty mug\"}}\n</tool_call>"
+ },
+ {
+  "id": "pg-policy-with-order-number-asks-for-the-email",
+  "category": "order_no_email",
+  "user": "What is the return window for order #1042?",
+  "output": "Could you send me the email address you used for the order (for example, name@example.com)?"
+ },
+ {
+  "id": "pg-policy-with-order-number-and-email-looks-up",
+  "category": "order_full",
+  "user": "Can I still return order #1042? My email is ava.chen@example.com.",
+  "output": "<tool_call>\n{\"name\": \"lookup_order\", \"arguments\": {\"order_number\": \"#1042\", \"email\": \"ava.chen@example.com\"}}\n</tool_call>"
+ }
+]

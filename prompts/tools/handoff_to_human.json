@@ -1,0 +1,10 @@
+{
+  "name": "handoff_to_human",
+  "description": "Hand the customer over to a human agent. Call it only when the customer asks for a human or says yes to your offer of one.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  }
+}

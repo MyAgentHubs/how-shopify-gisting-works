@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pricing",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string"
+    },
+    "accessed": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "default": {
+      "type": "string"
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "short": {
+            "type": "string"
+          },
+          "input": {
+            "type": "number"
+          },
+          "cache_read": {
+            "type": "number"
+          },
+          "min_cacheable": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "short",
+          "input",
+          "cache_read",
+          "min_cacheable"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "calculator": {
+      "type": "object",
+      "properties": {
+        "days_per_month": {
+          "type": "integer"
+        },
+        "default_per_day": {
+          "type": "integer"
+        },
+        "default_turns": {
+          "type": "integer"
+        },
+        "max_turns": {
+          "type": "integer"
+        },
+        "stops": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 32
+        },
+        "chart_stops": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "days_per_month",
+        "default_per_day",
+        "default_turns",
+        "max_turns",
+        "stops",
+        "chart_stops"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "source",
+    "accessed",
+    "default",
+    "models",
+    "calculator"
+  ],
+  "additionalProperties": false
+}
